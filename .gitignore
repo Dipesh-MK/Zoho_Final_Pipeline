@@ -48,3 +48,30 @@ Thumbs.db
 .agents/
 
 executed_notebook.json
+
+# Ignore Jupyter notebooks
+*.ipynb
+
+# Generated files
+executed_notebook.json
+notebook_hhem.txt
+notebook_hhem_pred.txt
+ollama_serve.log
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Caches
+.agents/
+.deepeval/
+.ipynb_checkpoints/
+ckpts/
+
+# IDE
+.vscode/
+.idea/
