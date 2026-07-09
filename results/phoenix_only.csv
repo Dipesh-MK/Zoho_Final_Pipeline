@@ -1,0 +1,25 @@
+dataset,id,tool,predicted_label,ground_truth_label,flagged_span_text,latency_seconds
+ragtruth,RT_715,Phoenix,faithful,faithful,factual,0.931
+ragtruth,RT_478,Phoenix,faithful,hallucinated,factual,3.2425
+ragtruth,RT_567,Phoenix,hallucinated,hallucinated,"We need see if conclusion adds unsupported info. The reference mentions benefits: eliminates toxins, improved circulation, pain relief, mental benefits. It repeats. Conclusion lists five: eliminates toxins, improved circulation, pain relief, mental benefits, detoxification. Detoxification is essenti",3.5315
+ragtruth,RT_264,Phoenix,faithful,faithful,factual,3.1889
+ragtruth,RT_335,Phoenix,hallucinated,hallucinated,hallucinated,3.575
+ragtruth,RT_043,Phoenix,faithful,faithful,factual,3.1449
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,Phoenix,faithful,faithful,factual,3.1765
+ragbench,RB_pubmedqa_pubmedqa_11119,Phoenix,faithful,hallucinated,factual,3.3257
+ragbench,RB_pubmedqa_pubmedqa_35832,Phoenix,faithful,hallucinated,factual,3.3343
+ragbench,RB_covidqa_00363,Phoenix,faithful,faithful,factual,34.9113
+ragbench,RB_techqa_techqa_DEV_Q135,Phoenix,hallucinated,hallucinated,hallucinated,3.518
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,Phoenix,faithful,faithful,factual,3.0125
+delucionqa,DQ_00001,Phoenix,hallucinated,faithful,hallucinated,7.0807
+delucionqa,DQ_00457,Phoenix,faithful,hallucinated,factual,6.2776
+delucionqa,DQ_00105,Phoenix,faithful,hallucinated,factual,3.1488
+delucionqa,DQ_00688,Phoenix,faithful,faithful,factual,3.5791
+delucionqa,DQ_00811,Phoenix,hallucinated,hallucinated,hallucinated,34.9802
+delucionqa,DQ_00354,Phoenix,faithful,faithful,factual,3.0974
+mock,F08,Phoenix,faithful,faithful,factual,3.5181
+mock,H07,Phoenix,hallucinated,hallucinated,hallucinated,3.549
+mock,H03,Phoenix,hallucinated,hallucinated,hallucinated,2.8468
+mock,F06,Phoenix,faithful,faithful,factual,3.5278
+mock,H08,Phoenix,hallucinated,hallucinated,hallucinated,3.5112
+mock,F03,Phoenix,faithful,faithful,factual,3.2

@@ -1,0 +1,25 @@
+dataset,id,tool,predicted_label,ground_truth_label,flagged_span_text,latency_seconds
+ragtruth,RT_715,RAGAS,faithful,faithful,score=1.000; claims=3,2.6142
+ragtruth,RT_478,RAGAS,hallucinated,hallucinated,score=0.500; claims=4,4.0748
+ragtruth,RT_567,RAGAS,hallucinated,hallucinated,score=0.857; claims=7,4.2934
+ragtruth,RT_264,RAGAS,faithful,faithful,score=1.000; claims=13,4.2636
+ragtruth,RT_335,RAGAS,faithful,hallucinated,score=1.000; claims=9,3.8042
+ragtruth,RT_043,RAGAS,faithful,faithful,score=1.000; claims=6,4.1811
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,RAGAS,hallucinated,faithful,score=0.545; claims=11,3.6231
+ragbench,RB_pubmedqa_pubmedqa_11119,RAGAS,hallucinated,hallucinated,score=0.667; claims=6,4.0585
+ragbench,RB_pubmedqa_pubmedqa_35832,RAGAS,faithful,hallucinated,score=1.000; claims=3,4.2721
+ragbench,RB_covidqa_00363,RAGAS,faithful,faithful,score=1.000; claims=2,3.6597
+ragbench,RB_techqa_techqa_DEV_Q135,RAGAS,hallucinated,hallucinated,score=0.429; claims=7,4.3005
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,RAGAS,hallucinated,faithful,score=0.750; claims=4,4.4031
+delucionqa,DQ_00001,RAGAS,hallucinated,faithful,score=0.250; claims=16,3.8211
+delucionqa,DQ_00457,RAGAS,hallucinated,hallucinated,score=0.875; claims=8,3.5331
+delucionqa,DQ_00105,RAGAS,faithful,hallucinated,score=1.000; claims=12,3.9114
+delucionqa,DQ_00688,RAGAS,hallucinated,faithful,score=0.800; claims=5,4.0833
+delucionqa,DQ_00811,RAGAS,hallucinated,hallucinated,score=0.600; claims=10,4.411
+delucionqa,DQ_00354,RAGAS,hallucinated,faithful,score=0.857; claims=7,3.597
+mock,F08,RAGAS,faithful,faithful,score=1.000; claims=2,4.0926
+mock,H07,RAGAS,hallucinated,hallucinated,score=0.000; claims=2,3.6725
+mock,H03,RAGAS,hallucinated,hallucinated,score=0.000; claims=3,3.9828
+mock,F06,RAGAS,hallucinated,faithful,score=0.667; claims=3,4.2488
+mock,H08,RAGAS,hallucinated,hallucinated,score=0.000; claims=2,3.6161
+mock,F03,RAGAS,faithful,faithful,score=1.000; claims=3,4.1078

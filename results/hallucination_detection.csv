@@ -1,0 +1,193 @@
+dataset,id,tool,predicted_label,ground_truth_label,flagged_span_text,latency_seconds
+ragtruth,RT_715,LettuceDetect,faithful,faithful,,0.7064
+ragtruth,RT_478,LettuceDetect,hallucinated,hallucinated, range;  for,0.1174
+ragtruth,RT_567,LettuceDetect,hallucinated,hallucinated,"Passage 2, Passage 3; Passage 2).; 5. Detoxification: Cupping can help detoxify the body by removing impurities and toxins through the ",0.0974
+ragtruth,RT_264,LettuceDetect,faithful,faithful,,0.1043
+ragtruth,RT_335,LettuceDetect,hallucinated,hallucinated," it's important to note that not all;  experience these symptoms, and their severity can vary from one person to another.",0.101
+ragtruth,RT_043,LettuceDetect,faithful,faithful,,0.0874
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,LettuceDetect,faithful,faithful,,0.0805
+ragbench,RB_pubmedqa_pubmedqa_11119,LettuceDetect,faithful,hallucinated,,0.0774
+ragbench,RB_pubmedqa_pubmedqa_35832,LettuceDetect,faithful,hallucinated,,0.0713
+ragbench,RB_covidqa_00363,LettuceDetect,faithful,faithful,,0.0871
+ragbench,RB_techqa_techqa_DEV_Q135,LettuceDetect,hallucinated,hallucinated,"1. Check the available flash memory space on the IBM DataPower Gateway to determine how much space i; 2. If possible, free up additional space on the flash memory by deleting unnecessary files or data t;  enough",0.1372
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,LettuceDetect,faithful,faithful,,0.0905
+delucionqa,DQ_00001,LettuceDetect,hallucinated,faithful,one left and one right).,0.1585
+delucionqa,DQ_00457,LettuceDetect,faithful,hallucinated,,0.1166
+delucionqa,DQ_00105,LettuceDetect,faithful,hallucinated,,0.1085
+delucionqa,DQ_00688,LettuceDetect,faithful,faithful,,0.1158
+delucionqa,DQ_00811,LettuceDetect,hallucinated,hallucinated,"4. If your OBD II system is not ready, you should see an authorized dealer or repair facility to hav",0.1608
+delucionqa,DQ_00354,LettuceDetect,faithful,faithful,,0.1075
+mock,F08,LettuceDetect,faithful,faithful,,0.0809
+mock,H07,LettuceDetect,faithful,hallucinated,,0.0843
+mock,H03,LettuceDetect,faithful,hallucinated,,0.0811
+mock,F06,LettuceDetect,faithful,faithful,,0.0869
+mock,H08,LettuceDetect,hallucinated,hallucinated,"Yes, Site24x7 detects issue root causes and performs fully autonomous self-healing.",0.0965
+mock,F03,LettuceDetect,faithful,faithful,,0.0862
+ragtruth,RT_715,Lynx,faithful,faithful,,1.744
+ragtruth,RT_478,Lynx,faithful,hallucinated,,5.5469
+ragtruth,RT_567,Lynx,hallucinated,hallucinated,,4.9662
+ragtruth,RT_264,Lynx,hallucinated,faithful,,5.5869
+ragtruth,RT_335,Lynx,hallucinated,hallucinated,,4.0261
+ragtruth,RT_043,Lynx,faithful,faithful,,5.3217
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,Lynx,hallucinated,faithful,,4.4811
+ragbench,RB_pubmedqa_pubmedqa_11119,Lynx,hallucinated,hallucinated,,6.0137
+ragbench,RB_pubmedqa_pubmedqa_35832,Lynx,faithful,hallucinated,,4.6107
+ragbench,RB_covidqa_00363,Lynx,faithful,faithful,,4.4765
+ragbench,RB_techqa_techqa_DEV_Q135,Lynx,hallucinated,hallucinated,,5.0889
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,Lynx,hallucinated,faithful,,5.1567
+delucionqa,DQ_00001,Lynx,error,faithful,,5.0852
+delucionqa,DQ_00457,Lynx,hallucinated,hallucinated,,4.944
+delucionqa,DQ_00105,Lynx,hallucinated,hallucinated,,5.161
+delucionqa,DQ_00688,Lynx,hallucinated,faithful,,5.5394
+delucionqa,DQ_00811,Lynx,hallucinated,hallucinated,,4.2069
+delucionqa,DQ_00354,Lynx,faithful,faithful,,4.7256
+mock,F08,Lynx,faithful,faithful,,5.0485
+mock,H07,Lynx,hallucinated,hallucinated,,4.9491
+mock,H03,Lynx,hallucinated,hallucinated,,4.3572
+mock,F06,Lynx,faithful,faithful,,5.0481
+mock,H08,Lynx,hallucinated,hallucinated,,5.2048
+mock,F03,Lynx,faithful,faithful,,4.9038
+ragtruth,RT_715,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",17.1056
+ragtruth,RT_478,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",21.5383
+ragtruth,RT_567,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",45.7329
+ragtruth,RT_264,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",30.9461
+ragtruth,RT_335,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",29.8592
+ragtruth,RT_043,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",25.6119
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",24.5873
+ragbench,RB_pubmedqa_pubmedqa_11119,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",38.2876
+ragbench,RB_pubmedqa_pubmedqa_35832,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",28.3276
+ragbench,RB_covidqa_00363,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",19.7581
+ragbench,RB_techqa_techqa_DEV_Q135,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",17.6315
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",21.3726
+delucionqa,DQ_00001,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",35.3651
+delucionqa,DQ_00457,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",22.3439
+delucionqa,DQ_00105,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",29.1236
+delucionqa,DQ_00688,DeepEval,faithful,faithful,"The score is 0.67 because the actual output claims that any illumination of the ABS warning light indicates a malfunction, contradicting the retrieval context which states the ABS light signals a problem only if it remains on or lights up while driving.",29.4504
+delucionqa,DQ_00811,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",36.1953
+delucionqa,DQ_00354,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",19.9246
+mock,F08,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",15.4668
+mock,H07,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",17.695
+mock,H03,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",17.1953
+mock,F06,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",16.4423
+mock,H08,DeepEval,faithful,hallucinated,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",16.9533
+mock,F03,DeepEval,faithful,faithful,"The score is 1.00 because there are no contradictions, indicating perfect faithfulness.",17.1821
+ragtruth,RT_715,Phoenix,faithful,faithful,"raw_label=factual; raw_score=0.0; explanation=The response correctly reflects the context, which states that some states use winner‑take‑all while others use proportional allocation for Republican delegates, thus matching the fill‑in‑the‑blank answer.",1.1466
+ragtruth,RT_478,Phoenix,faithful,hallucinated,"raw_label=factual; raw_score=0.0; explanation=The response correctly notes that the context does not provide a specific numeric normal BNP range and does not assert any unsupported values, so it does not contain hallucinated information.",1.1466
+ragtruth,RT_567,Phoenix,hallucinated,hallucinated,"raw_label=hallucinated; raw_score=1.0; explanation=The response adds details not present in the context, such as specific mental health effects (reducing anxiety and depression), a separate ""detoxification"" benefit, and references to non-existent passages, which constitute hallucinated information.",1.1466
+ragtruth,RT_264,Phoenix,hallucinated,faithful,"raw_label=hallucinated; raw_score=1.0; explanation=The response adds several instructions (e.g., laying a towel in the sink, washing one glass at a time, cradling the bowl) that are not mentioned in the provided context, so it includes information not derived from the context, making it hallucinated",1.1466
+ragtruth,RT_335,Phoenix,hallucinated,hallucinated,"raw_label=hallucinated; raw_score=1.0; explanation=The response includes a claim that symptoms can start as early as six weeks, which is not present in the provided context; thus it contains information not based on the context, making it hallucinated.",1.1466
+ragtruth,RT_043,Phoenix,faithful,faithful,"raw_label=factual; raw_score=0.0; explanation=The response directly follows the step-by-step instructions given in the context for removing plastic from a dryer, without adding any information not present in the context.",1.1466
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,Phoenix,hallucinated,faithful,"raw_label=hallucinated; raw_score=1.0; explanation=The context only provides information about Mick Jagger and does not mention Brett Scallions. The response adds details about Brett Scallions, which are not supported by the given context, making that part hallucinated.",1.1466
+ragbench,RB_pubmedqa_pubmedqa_11119,Phoenix,hallucinated,hallucinated,"raw_label=hallucinated; raw_score=1.0; explanation=The response asserts that high harm avoidance is an essential feature of panic disorder, but the context only notes higher HA scores in many studies and cautions that this may be biased, without confirming it as an essential feature. The response al",1.1466
+ragbench,RB_pubmedqa_pubmedqa_35832,Phoenix,error,hallucinated,raw_label=; raw_score=; explanation=,1.1466
+ragbench,RB_covidqa_00363,Phoenix,error,faithful,raw_label=; raw_score=; explanation=,1.1466
+ragbench,RB_techqa_techqa_DEV_Q135,Phoenix,error,hallucinated,raw_label=; raw_score=; explanation=,1.1466
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,Phoenix,error,faithful,raw_label=; raw_score=; explanation=,1.1466
+delucionqa,DQ_00001,Phoenix,error,faithful,raw_label=; raw_score=; explanation=,1.1466
+delucionqa,DQ_00457,Phoenix,error,hallucinated,raw_label=; raw_score=; explanation=,1.1466
+delucionqa,DQ_00105,Phoenix,error,hallucinated,raw_label=; raw_score=; explanation=,1.1466
+delucionqa,DQ_00688,Phoenix,error,faithful,raw_label=; raw_score=; explanation=,1.1466
+delucionqa,DQ_00811,Phoenix,error,hallucinated,raw_label=; raw_score=; explanation=,1.1466
+delucionqa,DQ_00354,Phoenix,error,faithful,raw_label=; raw_score=; explanation=,1.1466
+mock,F08,Phoenix,error,faithful,raw_label=; raw_score=; explanation=,1.1466
+mock,H07,Phoenix,error,hallucinated,raw_label=; raw_score=; explanation=,1.1466
+mock,H03,Phoenix,error,hallucinated,raw_label=; raw_score=; explanation=,1.1466
+mock,F06,Phoenix,error,faithful,raw_label=; raw_score=; explanation=,1.1466
+mock,H08,Phoenix,error,hallucinated,raw_label=; raw_score=; explanation=,1.1466
+mock,F03,Phoenix,error,faithful,raw_label=; raw_score=; explanation=,1.1466
+ragtruth,RT_715,Bespoke-MiniCheck-7B,hallucinated,faithful,yes_prob=0.4688,2.4628
+ragtruth,RT_478,Bespoke-MiniCheck-7B,hallucinated,hallucinated,yes_prob=0.3923,20.4589
+ragtruth,RT_567,Bespoke-MiniCheck-7B,hallucinated,hallucinated,yes_prob=0.4225,4.6852
+ragtruth,RT_264,Bespoke-MiniCheck-7B,hallucinated,faithful,yes_prob=0.4073,25.8812
+ragtruth,RT_335,Bespoke-MiniCheck-7B,hallucinated,hallucinated,yes_prob=0.4225,1.5692
+ragtruth,RT_043,Bespoke-MiniCheck-7B,hallucinated,faithful,yes_prob=0.4073,45.2998
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,Bespoke-MiniCheck-7B,hallucinated,faithful,yes_prob=0.4073,18.738
+ragbench,RB_pubmedqa_pubmedqa_11119,Bespoke-MiniCheck-7B,hallucinated,hallucinated,yes_prob=0.4378,42.3898
+ragbench,RB_pubmedqa_pubmedqa_35832,Bespoke-MiniCheck-7B,hallucinated,hallucinated,yes_prob=0.4533,69.6776
+ragbench,RB_covidqa_00363,Bespoke-MiniCheck-7B,hallucinated,faithful,yes_prob=0.4378,46.9576
+ragbench,RB_techqa_techqa_DEV_Q135,Bespoke-MiniCheck-7B,hallucinated,hallucinated,yes_prob=0.4378,129.6196
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,Bespoke-MiniCheck-7B,hallucinated,faithful,yes_prob=0.4533,19.0482
+delucionqa,DQ_00001,Bespoke-MiniCheck-7B,hallucinated,faithful,yes_prob=0.4073,123.3729
+delucionqa,DQ_00457,Bespoke-MiniCheck-7B,hallucinated,hallucinated,yes_prob=0.3775,96.1622
+delucionqa,DQ_00105,Bespoke-MiniCheck-7B,hallucinated,hallucinated,yes_prob=0.3923,61.0302
+delucionqa,DQ_00688,Bespoke-MiniCheck-7B,hallucinated,faithful,yes_prob=0.3923,57.976
+delucionqa,DQ_00811,Bespoke-MiniCheck-7B,hallucinated,hallucinated,yes_prob=0.4073,122.9727
+delucionqa,DQ_00354,Bespoke-MiniCheck-7B,hallucinated,faithful,yes_prob=0.4073,79.901
+mock,F08,Bespoke-MiniCheck-7B,faithful,faithful,yes_prob=0.5467,0.6174
+mock,H07,Bespoke-MiniCheck-7B,faithful,hallucinated,yes_prob=0.5775,0.6268
+mock,H03,Bespoke-MiniCheck-7B,faithful,hallucinated,yes_prob=0.5775,0.6864
+mock,F06,Bespoke-MiniCheck-7B,faithful,faithful,yes_prob=0.5775,0.6165
+mock,H08,Bespoke-MiniCheck-7B,faithful,hallucinated,yes_prob=0.5775,0.6443
+mock,F03,Bespoke-MiniCheck-7B,faithful,faithful,yes_prob=0.5622,0.6632
+ragtruth,RT_715,AlignScore,faithful,faithful,,0.9358
+ragtruth,RT_478,AlignScore,faithful,hallucinated,,0.5362
+ragtruth,RT_567,AlignScore,hallucinated,hallucinated,,0.7691
+ragtruth,RT_264,AlignScore,faithful,faithful,,0.5893
+ragtruth,RT_335,AlignScore,hallucinated,hallucinated,,0.301
+ragtruth,RT_043,AlignScore,faithful,faithful,,1.1354
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,AlignScore,faithful,faithful,,0.301
+ragbench,RB_pubmedqa_pubmedqa_11119,AlignScore,faithful,hallucinated,,0.6082
+ragbench,RB_pubmedqa_pubmedqa_35832,AlignScore,hallucinated,hallucinated,,0.3709
+ragbench,RB_covidqa_00363,AlignScore,faithful,faithful,,0.301
+ragbench,RB_techqa_techqa_DEV_Q135,AlignScore,faithful,hallucinated,,1.5773
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,AlignScore,faithful,faithful,,0.301
+delucionqa,DQ_00001,AlignScore,hallucinated,faithful,,10.2181
+delucionqa,DQ_00457,AlignScore,faithful,hallucinated,,7.8871
+delucionqa,DQ_00105,AlignScore,faithful,hallucinated,,1.3216
+delucionqa,DQ_00688,AlignScore,faithful,faithful,,2.6067
+delucionqa,DQ_00811,AlignScore,faithful,hallucinated,,13.1434
+delucionqa,DQ_00354,AlignScore,hallucinated,faithful,,4.4129
+mock,F08,AlignScore,faithful,faithful,,0.463
+mock,H07,AlignScore,hallucinated,hallucinated,,0.4533
+mock,H03,AlignScore,hallucinated,hallucinated,,0.4469
+mock,F06,AlignScore,faithful,faithful,,0.445
+mock,H08,AlignScore,hallucinated,hallucinated,,0.4467
+mock,F03,AlignScore,faithful,faithful,,0.4398
+ragtruth,RT_715,HHEM-2.1,faithful,faithful,,0.543
+ragtruth,RT_478,HHEM-2.1,faithful,hallucinated,,0.301
+ragtruth,RT_567,HHEM-2.1,hallucinated,hallucinated,,0.301
+ragtruth,RT_264,HHEM-2.1,faithful,faithful,,0.301
+ragtruth,RT_335,HHEM-2.1,faithful,hallucinated,,0.301
+ragtruth,RT_043,HHEM-2.1,faithful,faithful,,0.301
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,HHEM-2.1,faithful,faithful,,0.301
+ragbench,RB_pubmedqa_pubmedqa_11119,HHEM-2.1,faithful,hallucinated,,0.301
+ragbench,RB_pubmedqa_pubmedqa_35832,HHEM-2.1,hallucinated,hallucinated,,0.301
+ragbench,RB_covidqa_00363,HHEM-2.1,faithful,faithful,,0.301
+ragbench,RB_techqa_techqa_DEV_Q135,HHEM-2.1,hallucinated,hallucinated,,0.301
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,HHEM-2.1,faithful,faithful,,0.301
+delucionqa,DQ_00001,HHEM-2.1,faithful,faithful,,0.301
+delucionqa,DQ_00457,HHEM-2.1,faithful,hallucinated,,0.301
+delucionqa,DQ_00105,HHEM-2.1,faithful,hallucinated,,0.301
+delucionqa,DQ_00688,HHEM-2.1,faithful,faithful,,0.301
+delucionqa,DQ_00811,HHEM-2.1,hallucinated,hallucinated,,0.301
+delucionqa,DQ_00354,HHEM-2.1,faithful,faithful,,0.301
+mock,F08,HHEM-2.1,hallucinated,faithful,,0.301
+mock,H07,HHEM-2.1,hallucinated,hallucinated,,0.301
+mock,H03,HHEM-2.1,hallucinated,hallucinated,,0.301
+mock,F06,HHEM-2.1,faithful,faithful,,0.301
+mock,H08,HHEM-2.1,hallucinated,hallucinated,,0.301
+mock,F03,HHEM-2.1,faithful,faithful,,0.301
+ragtruth,RT_715,RAGAS,faithful,faithful,faithfulness_score=1.000; claims=2; unsupported=[],6.1531
+ragtruth,RT_478,RAGAS,hallucinated,hallucinated,"faithfulness_score=0.429; claims=7; unsupported=['Passage 3 states that the purpose of the BNP test is to check for heart failure.', 'Passage 3 suggests that any deviation from normal BNP levels could indicate a heart issue.', 'A normal BNP level is within the range typical for a healthy individual ",12.3546
+ragtruth,RT_567,RAGAS,faithful,hallucinated,"faithfulness_score=0.600; claims=5; unsupported=['Cupping can increase blood circulation, which can help improve overall health.', 'Cupping can help detoxify the body by removing impurities and toxins through the skin.']",9.308
+ragtruth,RT_264,RAGAS,faithful,faithful,faithfulness_score=1.000; claims=10; unsupported=[],15.4837
+ragtruth,RT_335,RAGAS,error,hallucinated,"No JSON array found in response: '[\n  {\n    ""claim"": ""Mood swings are an early sign of pregnancy."",\n    ""verdict"": 1,\n    ""reason"": ""Context states mood swings are common in early pregnancy.""\n  },\n  {\n    ""claim"": ""Dizziness is an ear'",17.5504
+ragtruth,RT_043,RAGAS,faithful,faithful,faithfulness_score=1.000; claims=8; unsupported=[],21.8277
+ragbench,RB_hotpotqa_5ac4c16b5542997ea680cab4,RAGAS,faithful,faithful,"faithfulness_score=0.500; claims=12; unsupported=['Mick Jagger and Brett Scallions are both musicians.', 'Brett Scallions is American.', 'Brett Scallions is the lead vocalist of the post-grunge band Fuel.']",21.6244
+ragbench,RB_pubmedqa_pubmedqa_11119,RAGAS,faithful,hallucinated,"faithfulness_score=0.750; claims=8; unsupported=['The available evidence suggests that high harm avoidance appears to be an essential feature of panic disorder.', 'More research in samples without confounding factors would be needed to definitively conclude whether harm avoidance is truly an essenti",28.1324
+ragbench,RB_pubmedqa_pubmedqa_35832,RAGAS,faithful,hallucinated,faithfulness_score=1.000; claims=3; unsupported=[],16.4668
+ragbench,RB_covidqa_00363,RAGAS,faithful,faithful,faithfulness_score=1.000; claims=1; unsupported=[],9.4085
+ragbench,RB_techqa_techqa_DEV_Q135,RAGAS,hallucinated,hallucinated,"faithfulness_score=0.000; claims=7; unsupported=['The error message indicates that there is not enough available flash memory space on the IBM DataPower Gateway to install the firmware image.', 'The system is unable to reboot after the failed installation.', 'One should check the available flash mem",18.5321
+ragbench,RB_hotpotqa_5abcefc45542993a06baf9b4,RAGAS,hallucinated,faithful,"faithfulness_score=0.333; claims=3; unsupported=['The cabinet-making firm Gillows of Lancaster and London was founded in Lancaster.', 'Gillows of Lancaster and London was founded around 1730.']",9.5042
+delucionqa,DQ_00001,RAGAS,error,faithful,"No JSON array found in response: '[\n  {\n    ""claim"": ""Reinstall the front grommets when reinstalling the front carpet."",\n    ""verdict"": 0,\n    ""reason"": ""Context does not mention front grommets or reinstalling them.""\n  },\n  {\n    ""cla'",21.934
+delucionqa,DQ_00457,RAGAS,faithful,hallucinated,faithfulness_score=0.875; claims=8; unsupported=['Placing insulating objects on a heated steering wheel can cause overheating and should be avoided.'],26.7155
+delucionqa,DQ_00105,RAGAS,faithful,hallucinated,faithfulness_score=1.000; claims=12; unsupported=[],20.4665
+delucionqa,DQ_00688,RAGAS,hallucinated,faithful,"faithfulness_score=0.250; claims=4; unsupported=['The ABS Warning Light being on indicates that the anti-lock portion of the brake system is not functioning properly.', 'It is recommended to have the brake system serviced as soon as possible to restore the benefits of anti-lock brakes.', 'If the ABS",16.3461
+delucionqa,DQ_00811,RAGAS,error,hallucinated,"No JSON array found in response: '[\n  {\n    ""claim"": ""To check OBD II readiness, you must cycle the ignition switch to the ON position without cranking or starting the engine."",\n    ""verdict"": 1,\n    ""reason"": ""Context explicitly says'",31.0111
+delucionqa,DQ_00354,RAGAS,faithful,faithful,faithfulness_score=1.000; claims=4; unsupported=[],20.9857
+mock,F08,RAGAS,faithful,faithful,faithfulness_score=1.000; claims=2; unsupported=[],9.4921
+mock,H07,RAGAS,hallucinated,hallucinated,"faithfulness_score=0.000; claims=2; unsupported=['Zoho Mail includes a generative AI helper.', 'The generative AI helper in Zoho Mail writes replies for you.']",9.9009
+mock,H03,RAGAS,hallucinated,hallucinated,faithfulness_score=0.000; claims=1; unsupported=['Zoho Desk automatically translates all incoming support tickets for agents.'],9.8368
+mock,F06,RAGAS,faithful,faithful,faithfulness_score=1.000; claims=3; unsupported=[],11.7077
+mock,H08,RAGAS,hallucinated,hallucinated,"faithfulness_score=0.000; claims=2; unsupported=['Site24x7 detects issue root causes.', 'Site24x7 performs fully autonomous self-healing.']",8.6238
+mock,F03,RAGAS,faithful,faithful,faithfulness_score=1.000; claims=2; unsupported=[],10.6617

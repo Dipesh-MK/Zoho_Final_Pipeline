@@ -1,0 +1,24 @@
+{"id": "RT_715", "dataset": "ragtruth", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "RT_478", "dataset": "ragtruth", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "RT_567", "dataset": "ragtruth", "predicted_label": "hallucinated", "raw_output": "We need see if conclusion adds unsupported info. The reference mentions benefits: eliminates toxins, improved circulation, pain relief, mental benefits. It repeats. Conclusion lists five: eliminates toxins, improved circulation, pain relief, mental benefits, detoxification. Detoxification is essentially same as eliminates toxins, but it's duplicate. Also mentions \"five main benefits\" but reference didn't list five distinct; it repeated. Also cites passages numbers incorrectly but that's fine. The conclusion adds \"Detoxification\" which is redundant but not new. However claim of five main benefits is not directly supported as five distinct items; reference only lists four categories. So conclusion includes unsupported claim of five distinct benefits; also repeats. Likely hallucinated."}
+{"id": "RT_264", "dataset": "ragtruth", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "RT_335", "dataset": "ragtruth", "predicted_label": "hallucinated", "raw_output": "hallucinated"}
+{"id": "RT_043", "dataset": "ragtruth", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "RB_hotpotqa_5ac4c16b5542997ea680cab4", "dataset": "ragbench", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "RB_pubmedqa_pubmedqa_11119", "dataset": "ragbench", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "RB_pubmedqa_pubmedqa_35832", "dataset": "ragbench", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "RB_covidqa_00363", "dataset": "ragbench", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "RB_techqa_techqa_DEV_Q135", "dataset": "ragbench", "predicted_label": "hallucinated", "raw_output": "hallucinated"}
+{"id": "RB_hotpotqa_5abcefc45542993a06baf9b4", "dataset": "ragbench", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "DQ_00001", "dataset": "delucionqa", "predicted_label": "hallucinated", "raw_output": "hallucinated"}
+{"id": "DQ_00457", "dataset": "delucionqa", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "DQ_00105", "dataset": "delucionqa", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "DQ_00688", "dataset": "delucionqa", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "DQ_00811", "dataset": "delucionqa", "predicted_label": "hallucinated", "raw_output": "hallucinated"}
+{"id": "DQ_00354", "dataset": "delucionqa", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "F08", "dataset": "mock", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "H07", "dataset": "mock", "predicted_label": "hallucinated", "raw_output": "hallucinated"}
+{"id": "H03", "dataset": "mock", "predicted_label": "hallucinated", "raw_output": "hallucinated"}
+{"id": "F06", "dataset": "mock", "predicted_label": "faithful", "raw_output": "factual"}
+{"id": "H08", "dataset": "mock", "predicted_label": "hallucinated", "raw_output": "hallucinated"}
+{"id": "F03", "dataset": "mock", "predicted_label": "faithful", "raw_output": "factual"}
