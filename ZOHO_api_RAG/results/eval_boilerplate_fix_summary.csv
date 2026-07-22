@@ -1,0 +1,3 @@
+variant,recall_1_mean,recall_1_std,recall_10_mean,recall_10_std,avg_n
+after_fix,0.5825,0.0328,0.9025,0.0388,100.0
+before_fix,0.6188,0.047,0.9,0.016,100.0

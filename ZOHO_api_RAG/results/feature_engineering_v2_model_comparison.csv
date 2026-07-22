@@ -1,0 +1,4 @@
+model,roc_auc_9feat,pr_auc_9feat,roc_auc_5feat_baseline,roc_auc_delta
+random_forest,0.9228,0.7743,0.8938,0.029
+gradient_boosting,0.9218,0.7746,0.8966,0.0252
+logistic_regression,0.9156,0.7506,0.8847,0.0309

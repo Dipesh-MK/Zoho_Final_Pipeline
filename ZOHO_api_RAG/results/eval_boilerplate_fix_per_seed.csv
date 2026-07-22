@@ -1,0 +1,17 @@
+seed,recall@1,recall@10,n_eval,variant
+1,0.61,0.9,100,before_fix
+2,0.68,0.9,100,before_fix
+3,0.61,0.9,100,before_fix
+4,0.67,0.91,100,before_fix
+5,0.56,0.9,100,before_fix
+6,0.66,0.93,100,before_fix
+7,0.56,0.88,100,before_fix
+8,0.6,0.88,100,before_fix
+1,0.61,0.95,100,after_fix
+2,0.56,0.89,100,after_fix
+3,0.64,0.91,100,after_fix
+4,0.61,0.93,100,after_fix
+5,0.55,0.88,100,after_fix
+6,0.57,0.95,100,after_fix
+7,0.56,0.86,100,after_fix
+8,0.56,0.85,100,after_fix

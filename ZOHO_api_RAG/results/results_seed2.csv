@@ -1,0 +1,1335 @@
+query,is_hallucinated_gt,response,frac_unsupported_embedding,direct_judge_context_relevant,direct_flagged,lr_risk_probability,cascade_judge_fired,cascade_label,cascade_flagged
+How can I see the highest latency for my AppSync services?,False,"To see the highest latency for your AppSync services, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/APPSYNC/latency
+
+This retrieves a report showing the top AppSync services with the highest latency values.",0.0,true,False,0.0412,False,low,False
+How can I see which Transit Gateway Attachments have the highest outbound traffic?,False,"To see which Transit Gateway Attachments have the highest outbound traffic, use the following API endpoint:
+
+GET /app/api/reports/top_n/TGWATTACHMENT/tg_bytes_out
+
+This will show the top Transit Gateway Attachments by outbound bytes to monitor outgoing traffic volumes.",0.0,true,False,0.3397,False,low,False
+How can I see which GCP Cloud Functions have the highest execution counts?,False,"To see which GCP Cloud Functions have the highest execution counts, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/CLOUDFUNCTIONS/execution_count
+
+This retrieves a report listing GCP Cloud Functions ranked by their execution counts.",0.0,true,False,0.0745,False,low,False
+fetch child Linux service details for Azure Virtual Machine reports,False,"To fetch child Linux service details for Azure Virtual Machine reports, use the following API endpoint:
+
+GET /app/api/reports/child-details/AZURE-VM/LinuxServiceDetails/{id}
+
+Replace {id} with the specific ID of the Azure Virtual Machine for which you want to retrieve the Linux service details.",0.0,true,False,0.0683,False,low,False
+How can I view the performance report for my Azure Triggered WebJobs?,False,"To view the performance report for your Azure Triggered WebJobs, you can use the following API endpoint:
+
+GET /app/api/reports/performance/type/AZURE-TRIGGEREDWEBJOB
+
+This endpoint fetches the performance report detailing key metrics and performance data for Azure Triggered WebJobs.",0.0,true,False,0.0497,False,low,False
+fetch Azure Virtual Machine disk details report by monitor id,False,"To fetch the Azure Virtual Machine disk details report by monitor ID, use the following API endpoint:
+
+GET /app/api/reports/child-details/AZURE-VM/DiskDetails/{id}
+
+Replace {id} with the specific Azure VM monitor ID to retrieve detailed disk usage and status reports.",0.0,true,False,0.0377,False,low,False
+How do I verify Zoho Cliq chatlet integration settings in Site24x7,False,"To verify Zoho Cliq chatlet integration settings in Site24x7, you can use the following API endpoint:
+
+GET /app/api/cliq_chatlet
+
+This API checks the Zoho Cliq chatlet integration configuration status for your account. Calling this endpoint will let you know if the chatlet integration is enabled or not.",0.0,true,False,0.1337,False,low,False
+How can I view the trending reports for Juniper MIST devices?,False,"To view the trending reports for Juniper MIST devices, you can use the following API endpoints depending on the specific device type:
+
+- For general Juniper MIST devices trend reports:
+  GET /app/api/reports/trend/type/JUNIPER-MIST
+
+- For Juniper Mist WAN Edge devices trend reports:
+  GET /app/api/reports/trend/type/JUNIPER-MIST-WAN-EDGE
+
+- For Juniper Mist switches trend reports:
+  GET /app/api/reports/trend/type/JUNIPER-MIST-SWITCH
+
+- For Juniper Mist access points trend reports:
+  GET /app/api/reports/trend/type/JUNIPER-MIST-AP
+
+These endpoints fetch trending performance data over time to analyze behavior and status trends.",0.0,true,False,0.0643,False,low,False
+How can I retrieve all custom reports in Site24x7 with their details,False,"To retrieve all custom reports in Site24x7 with their details, you can use the following endpoints depending on the level of detail you need:
+
+1. For a list of Custom Reports with details like name, description, type, category, and creator/last-updated metadata for each report (typically the current user's working list), use:
+   ```
+   GET https://www.site24x7.com/app/api/short/reports/custom_reports
+   ```
+
+2. For a lightweight, account-wide list of all Custom Reports across all users, each tagged with the creating user's zuid, use:
+   ```
+   GET https://www.site24x7.com/app/api/short/reports/custom
+   ```
+   This gives a broader catalogue for the entire account.
+
+3. To get the full saved configuration (name, description, and full config_data including columns, report_type, category, sort_by, grouping, time_period) of a specific Custom Report by its ID, use:
+   ```
+   GET https://www.site24x7.com/app/api/reports/custom_reports/{id}
+   ```
+
+So, to retrieve all custom reports with details, first fetch the list via `/short/reports/custom_reports` or `/short/reports/custom`, then for each report ID, fetch the full configuration via `/reports/custom_reports/{id}`.",0.2,true,False,0.5125,True,low,False
+How can I view the availability summary for my application load balancers?,False,"To view the availability summary for your application load balancers, you can use the following API endpoint:
+
+GET /app/api/reports/availability_summary/type/APPLICATIONLB
+
+This fetches availability summary reports specifically for Application Load Balancers.",0.0,true,False,0.5739,True,low,False
+get Hyper-V child VM replication report by ID,False,"To get the Hyper-V child VM replication report by ID, use the following API endpoint:
+
+GET /app/api/reports/child-details/HYPERV/VMREPLICATIONDETAILS/{id}
+
+Replace {id} with the specific Hyper-V virtual machine ID to retrieve its VM replication details.",0.0,true,False,0.2421,False,low,False
+fetch top N RDS Proxy query response latency report,False,"To fetch the top N RDS Proxy query response latency report, use the following API endpoint:
+
+GET /app/api/reports/top_n/RDS-PROXY/query_Response_Latency
+
+This endpoint retrieves a report of the top RDS Proxy instances ranked by query response latency.",0.0,true,False,0.0442,False,low,False
+list top n receive counts for Amazon MQ Network Connector,False,"To list the top N receive counts for Amazon MQ Network Connector nodes, use the following API endpoint:
+
+GET /app/api/reports/top_n/AMQNC/receive_count
+
+This fetches a report of the top Amazon MQ Network Connector nodes ranked by their receive count.",0.0,true,False,0.7313,True,low,False
+fetch gRPC summary report details,False,"To fetch gRPC summary report details, use the following API endpoint:
+
+GET /app/api/reports/summary/type/GRPC
+
+This endpoint provides a summary report detailing key metrics for gRPC services.",0.0,true,False,0.0621,False,low,False
+update webclient_language_code for My Account module,False,"To update the webclient_language_code for the My Account module, use the following API endpoint:
+
+PUT /app/api/webclient_language
+
+This endpoint updates data related to Web Client Notification Settings, which includes the language code settings for the web client. You will need to send a PUT request to this endpoint with the updated language code in the request body.",0.0,partial,True,0.1561,False,low,False
+get alert logs details,False,"To get alert logs details, use the following API endpoint:
+
+GET /app/api/applog/alerts
+
+This endpoint fetches data for Alert Logs.",0.0,true,False,0.8682,False,high,True
+list top VPC availability zones by minimum RX packet,False,"To list the top VPC availability zones by minimum received (RX) packets, use the following API endpoint:
+
+GET /app/api/reports/top_n/VPC_AZ/min_rx_packet
+
+This endpoint retrieves a report of VPC availability zones with the lowest received packet rates.",0.0,true,False,0.0719,False,low,False
+Show me related templates for alert logs,False,"To fetch related templates for alert logs, use the following API endpoint:
+
+GET /app/api/applog/related_templates
+
+This endpoint retrieves data for related templates of alert logs.",0.0,true,False,0.112,False,low,False
+How can I check the trend report for Azure DNS performance?,False,"To check the trend report for Azure DNS performance, you can use the following API endpoint:
+
+GET /app/api/reports/trend/type/AZURE-DNS
+
+This endpoint retrieves trend reports detailing performance metrics over time specifically for Azure DNS services.",0.0,true,False,0.068,False,low,False
+fetch complete SSL certificate security report list,False,"To fetch the complete SSL certificate security report list, use the following API endpoint:
+
+GET /api/reports/ssl_cert/all
+
+This endpoint provides comprehensive security reports for all SSL certificates monitored to assess their status and compliance.",0.0,true,False,0.0498,False,low,False
+get notification_profiles for ops module,False,"To get the notification profiles for the Operations module, you can use the endpoint:
+
+GET /app/api/short/notification_profiles
+
+This endpoint fetches data for Operations (supporting lookup used by multiple sub-features), providing a lightweight list of notification profiles relevant to the Ops module.",0.0,true,False,0.2198,False,low,False
+fetch FortiGate device performance metrics report,False,"To fetch the FortiGate device performance metrics report, use the following API endpoint:
+
+GET /app/api/reports/performance/type/FORTIGATE
+
+This will provide performance reports for FortiGate devices, detailing key performance metrics and health indicators.",0.0,true,False,0.0774,False,low,False
+fetch report download history trends,False,"To fetch report download history trends, use the following API endpoint:
+
+GET /app/api/reports/trend
+
+This endpoint returns trend data showing the download history and patterns for reports over time.",0.0,true,False,0.0959,False,low,False
+get Azure Blob Storage trend report,False,"To get the Azure Blob Storage trend report, use the following API endpoint:
+
+GET /app/api/reports/trend/type/AZURE-STORAGE-BLOB
+
+This provides usage trend reports for Azure Blob Storage over a specified period.",0.0,true,False,0.0738,False,low,False
+show me agent upgrade versions for servers,False,"To get the available agent versions eligible for upgrade for servers, you can use the following API endpoint:
+
+GET https://www.site24x7.com/app/api/short/server/agent_upgradable_versions
+
+This fetches the latest and stable available agent version numbers for each upgradable agent type including Server Agent, On-Premise Poller, and FullStack Agent (separately for Windows/Linux where applicable). It is used to populate version-selection options in the Auto Upgrade Profile create form.",0.5,true,True,0.6626,True,low,False
+How can I view the global database data transfer report for my RDS clusters?,False,"You can view the global database data transfer report for your RDS clusters by making a GET request to the following endpoint:
+
+GET /app/api/reports/top_n/RDS-CLUSTER/global_db_data_transfer
+
+This will retrieve the top RDS clusters based on global database data transfer statistics.",0.0,true,False,0.0437,False,low,False
+How can I view the summary report for Azure Bastion instances?,False,"You can view the summary report for Azure Bastion instances by making a GET request to the following endpoint:
+
+GET /app/api/reports/summary/type/AZURE-BASTION
+
+This will fetch summary reports offering an overview of the status and metrics of Azure Bastion instances.",0.0,true,False,0.0772,False,low,False
+How do I retrieve browser options for a specific profile in Site24x7,False,"To retrieve browser configuration options for a specific profile in Site24x7, use the following API endpoint:
+
+GET /app/api/browser_options/{browser_profile_id}/{application_type}
+
+Replace `{browser_profile_id}` with the ID of the browser profile and `{application_type}` with the type of monitor/application you are querying for. This call will return the browser configuration options associated with the given monitor type and profile.",0.0,true,False,0.148,False,low,False
+How do I retrieve a list of user groups for notification profiles in Site24x7,False,"To retrieve a list of user groups for notification profiles in Site24x7, you can use the following API endpoint:
+
+GET https://www.site24x7.com/app/api/short/user_groups
+
+This endpoint fetches a lightweight list of existing User Groups containing only the id and name. These user groups are used as the contact-group selector when building a Notification Profile's alert and escalation configuration.",0.0,true,False,0.2315,False,low,False
+How can I check the highest CPU usage for Cambium Edge BETA devices?,False,"To check the highest CPU usage for Cambium Edge BETA devices, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/CAMBIUM-EDGE/cpu_util
+
+This endpoint retrieves the top N Cambium Edge BETA devices ranked by CPU utilization.",0.0,true,False,0.1152,False,low,False
+How can I view the slow query processing threads for my Exchange Server?,False,"To view the slow query processing threads for your Microsoft Exchange Server, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/MSEXCHANGE/slow_qp_threads
+
+This will provide you with the top N reports on slow query processing threads in Microsoft Exchange Servers.",0.0,true,False,0.0747,False,low,False
+fetch IIS server app pool child details report,False,"To fetch the IIS server application pool child details report, use the following API endpoint:
+
+GET /app/api/reports/child-details/IISSERVER/APPPOOLS/{id}
+
+Replace {id} with the specific Microsoft IIS Server ID for which you want to retrieve the application pool details. This will provide insights into app pool performance and health.",0.0,true,False,0.0381,False,low,False
+How can I view the performance trends for my Azure Virtual Machines?,False,"To view the performance trends for your Azure Virtual Machines, you can use the following API endpoint:
+
+GET /app/api/reports/trend/type/AZURE-VM
+
+This endpoint fetches performance trend reports for Azure Virtual Machines, allowing you to analyze their operational metrics over time.",0.0,true,False,0.1073,False,low,False
+How can I view outage reports for my VPC route tables?,False,"To view outage reports for your VPC route tables, use the following API endpoint:
+
+GET /app/api/reports/outages/type/VPC_RT
+
+This endpoint provides mapped outage reports specifically for VPC route tables to help monitor connectivity issues.",0.0,true,False,0.0382,False,low,False
+list top outbound private bandwidth usage for DigitalOcean Droplets,False,"To list the top outbound private bandwidth usage for DigitalOcean Droplets, use the following API endpoint:
+
+GET /app/api/reports/top_n/DIGITALOCEAN_DROPLET/bandwidth_outbound_private
+
+This will provide a report listing DigitalOcean Droplets with the highest outbound private bandwidth usage.",0.0,true,False,0.2395,False,low,False
+fetch bottom n idle timeout statistics for VPC NAT Gateway,False,"To fetch the bottom N idle timeout statistics for VPC NAT Gateways, use the following API endpoint:
+
+GET /app/api/reports/bottom_n/VPC_NATGATEWAY/idle_time_out_count
+
+This will retrieve the bottom N VPC NAT Gateways ranked by idle timeout counts for performance analysis.",0.0,true,False,0.0494,False,low,False
+monitor form template for Veeam Enterprise Manager,False,"The monitor form template for Veeam Enterprise Manager can be loaded using the following endpoint:
+
+GET /app/client/templates/monitors-form/add-veeam_enterprisemanager.json
+
+This endpoint loads the JSON form template used for adding the Veeam Enterprise Manager monitor type.",0.0,true,False,0.0635,False,low,False
+How can I view the summary report for my Azure Route Tables?,False,"To view the summary report for your Azure Route Tables, use the following API endpoint:
+
+GET /app/api/reports/summary/type/AZURE-ROUTE-TABLE
+
+This endpoint retrieves summary reports for Azure Route Tables, providing an overview of their configuration and status.",0.0,true,False,0.0633,False,low,False
+get all brand reputation security reports,False,"To get all brand reputation security reports, use the following API endpoint:
+
+GET /api/reports/brand_reputation/all
+
+This fetches all brand reputation security reports to assess online brand security status.",0.0,true,False,0.0562,False,low,False
+fetch top virtual memory usage for Kube-Proxy processes in Kubernetes reports,False,"To fetch the top virtual memory usage for Kube-Proxy processes in Kubernetes reports, use the following API endpoint:
+
+GET /app/api/reports/top_n/KUBERNETES_KUBE_PROXY/process_virtual_memory_bytes
+
+This endpoint shows Kube-Proxy processes with the highest virtual memory usage to assess memory allocation.",0.0,true,False,0.1402,False,low,False
+show me Zia AI data collections,False,"To view Zia AI data collections, use the following API endpoint:
+
+GET /app/api/genai/collections
+
+This API call lists the AI data collections available for Zia workflow processing.",0.0,true,False,0.1059,False,low,False
+fetch agentless server interface child details report,False,"To fetch the agentless server interface child details report, use the following API endpoint:
+
+GET /app/api/reports/child-details/AGENTLESSSERVER/INTERFACE/{id}
+
+Replace {id} with the specific agentless server ID to retrieve detailed interface information for that server.",0.0,true,False,0.081,False,low,False
+fetch child details for NetFlow device source in reports,False,"To fetch child details for the source in reports for a NetFlow device, use the following API endpoint:
+
+GET /app/api/reports/child-details/NETFLOWDEVICE/SOURCEIN/{id}
+
+Replace {id} with the specific NetFlow device ID.",0.0,true,False,0.0842,False,low,False
+How can I view the average database write latency for my Microsoft Exchange Server?,False,"You can view the average database write latency for your Microsoft Exchange Server by making a GET request to the following endpoint:
+
+GET /app/api/reports/top_n/MSEXCHANGE/db_writes_average_latency
+
+This will retrieve the top N reports on average database write latency for Microsoft Exchange Servers.",0.0,true,False,0.0461,False,low,False
+fetch top N WLC memory utilization report,False,"To fetch the top N Wireless LAN Controllers (WLC) memory utilization report, use the following API endpoint:
+
+GET /app/api/reports/top_n/WLC/mem_util
+
+This retrieves a report showing the top Wireless LAN Controllers based on memory usage.",0.0,true,False,0.0906,False,low,False
+get metric profile by id site24x7,False,"To get a Metric Profile by ID in Site24x7, use the following API call:
+
+GET https://www.site24x7.com/app/api/metric_profiles/{id}
+
+This fetches one specific existing Metric Profile by its ID, returning fields such as display name, monitor_type, and a 'selected_metrics' field. Note that in the GET response, the selected_metrics field is returned as a JSON-encoded STRING, which differs from the structured array format used when creating or updating profiles via POST or PUT.",0.0,true,False,0.1892,False,low,False
+show me plugin report settings lookup info,False,"To get plugin report settings lookup info, you can use the following endpoints that support lookup and are used by Scheduled Reports forms:
+
+- GET /app/api/short/plugins  
+- GET /app/api/plugin/listCustomTemplates/PLUGIN
+
+These endpoints fetch data related to Report Settings for plugins.",0.0,true,False,0.1592,False,low,False
+How do I update an APM business transaction rule in Site24x7,False,"To update an existing APM Business Transaction Rule in Site24x7, you need to use the following API endpoint:
+
+- **Method:** PUT  
+- **URL:** https://www.site24x7.com/app/api/apminsight/business_txn_rules/{id}
+
+Replace `{id}` with the ID of the Business Transaction Rule you want to update.
+
+You can modify properties such as:  
+- The rule's name  
+- Detection frequency  
+- Grouping flag (whether to enable or disable automatic transaction grouping)  
+- Other editable values related to the rule
+
+Send the updated rule data in the request body to apply the changes.",0.0,true,False,0.0727,False,low,False
+list Juniper WAN Edge BGP peers established report,False,"To list the Juniper WAN Edge BGP peers established report, use the following API endpoint:
+
+GET /app/api/reports/top_n/JUNIPER-MIST-WAN-EDGE/bgp_peers_established
+
+This endpoint provides a detailed report of the top BGP peers established on Juniper WAN Edge devices.",0.0,true,False,0.0702,False,low,False
+Which Operations lists ongoing maintenance periods,False,"The endpoints that fetch data related to Scheduled Maintenance, which represent ongoing maintenance periods, are:
+
+- GET /app/api/current_maintenance_list
+- GET /app/api/maintenance
+
+These endpoints provide data for Scheduled Maintenance, which corresponds to ongoing maintenance periods.
+
+The endpoints under /app/api/uptime_monitor/ are for Operations support and do not list ongoing maintenance periods.",0.0,true,False,0.5253,True,low,False
+list top Function Compute functions with errors in Alibaba Cloud reports,False,"To list the top Alibaba Cloud Function Compute functions with errors, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/ALIBABACLOUD_FC/FunctionFunctionErrors
+
+This provides a report of the top Alibaba Cloud Function Compute functions ranked by error occurrences.",0.0,true,False,0.1193,False,low,False
+list top RDS clusters by total backup storage billed report,False,"To list the top RDS clusters by total backup storage billed, use the following API endpoint:
+
+GET /app/api/reports/top_n/RDS-CLUSTER/total_backup_storage_billed
+
+This endpoint retrieves a report listing the top RDS clusters based on the total backup storage billed.",0.0,true,False,0.0712,False,low,False
+pull statusiq competitor pages,False,"To pull StatusIQ competitor pages, use the following API endpoint:
+
+GET /sp/api/migrate/competitor/pages
+
+This endpoint fetches data for Status Pages (StatusIQ) competitor pages.",0.0,true,False,0.6028,True,low,False
+get dashboard widget 15698000407685850 info,False,"To get information for dashboard widget 15698000407685850, use the following API endpoint:
+
+GET /app/api/dashboards/widgets/15698000407685850
+
+This fetches data related to Operations for that specific dashboard widget.",0.0,true,False,0.7745,True,low,False
+fetch WAN top N average RTT report,False,"To fetch the WAN top N average RTT report, use the following API endpoint:
+
+GET /app/api/reports/top_n/WANRTT/average",0.0,true,False,0.0502,False,low,False
+get kubernets_assistant workflow setup,False,"To get the kubernets_assistant workflow setup, use the following API endpoint:
+
+GET /app/api/genai/workflow/kubernets_assistant
+
+This will retrieve the specific AI workflow configuration for the kubernets_assistant by its ID or name.",0.0,true,False,0.0843,False,low,False
+is my app instrumented,False,"To check if your app is instrumented with APM Insight, you can use the following API endpoint:
+
+GET /app/api/apminsight/ins/hH
+
+This endpoint checks the APM Insight instrumentation status for the account. If you call this API, it will indicate whether your application is instrumented or not.",0.0,true,False,0.4415,True,low,False
+How do I fetch Zoho Cliq organization details for integration,False,"To fetch Zoho Cliq organization details required for configuring the Cliq channel integration, make a GET request to the following endpoint:
+
+GET /app/api/zcliq/org_details",0.0,true,False,0.0712,False,low,False
+fetch Huawei Cloud EIP top N upstream report,False,"To fetch the Huawei Cloud EIP top N upstream report, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/HUAWEICLOUD_EIP/up_stream
+
+This retrieves the top upstream usage report for Huawei Cloud Elastic IPs (EIP), showing the highest upstream traffic sources.",0.0,true,False,0.1662,False,low,False
+How can I view the memory usage for my Cambium Switch devices?,False,"To view the memory usage for your Cambium Switch devices, use the following API endpoint:
+
+GET /app/api/reports/top_n/CAMBIUM-SWITCH/memory_util
+
+This will retrieve the top N Cambium Switch devices ranked by memory utilization.",0.0,true,False,0.113,False,low,False
+get top VPC region report by total volume,False,"To get the top VPC region report by total volume, use the following API endpoint:
+
+GET /app/api/reports/top_n/VPC_REGIONAL/tot_volume
+
+This retrieves the top N VPC regions ranked by total volume metrics.",0.0,true,False,0.1342,False,low,False
+fetch Cambium Edge BETA mapped summary report,False,"To fetch the Cambium Edge BETA mapped summary report, use the following API endpoint:
+
+GET /app/api/reports/summary/type/CAMBIUM-EDGE",0.0,true,False,0.1064,False,low,False
+fetch Azure NAT gateway performance statistics report,False,"To fetch the Azure NAT Gateway performance statistics report, use the following API endpoint:
+
+GET /app/api/reports/performance/type/AZURE-NATGATEWAY
+
+This endpoint provides metrics and statistics on the operational efficiency of Azure NAT gateways.",0.0,true,False,0.0737,False,low,False
+list top invoked Alibaba Function Compute functions report,False,"To get a report listing the top invoked Alibaba Cloud Function Compute functions by invocation count, use the following API endpoint:
+
+GET /app/api/reports/top_n/ALIBABACLOUD_FC/Invocations",0.0,true,False,0.8074,True,low,False
+request for configuring Applications Manager integration,False,"To configure the Applications Manager integration, use the following API request:
+
+**Request:**
+POST /app/api/integration/appmanager
+
+This endpoint creates or configures the Applications Manager integration for unified monitoring between Site24x7 and Applications Manager.",0.0,true,False,0.0681,False,low,False
+list top n DigitalOcean Droplets with highest cpu system report,False,"To list the top n DigitalOcean Droplets with the highest CPU system usage, use the following API endpoint:
+
+GET /app/api/reports/top_n/DIGITALOCEAN_DROPLET/cpu_system
+
+This retrieves a report listing the top DigitalOcean Droplets ranked by system CPU usage.",0.0,true,False,0.0812,False,low,False
+fetch top VPC subnets by minimum transmitted volume report,False,"To fetch the top VPC subnets by minimum transmitted volume report, use the following endpoint:
+
+GET /app/api/reports/top_n/VPC_SUBNET/min_tx_volume",0.0,true,False,0.0943,False,low,False
+fetch Cisco ACI Spine child details report,False,"To fetch the Cisco ACI Spine child details report, use the following API endpoint:
+
+GET /app/api/reports/child-details/CISCOACI/SPINE/{id}
+
+Replace {id} with the specific Spine device ID for which you want to retrieve detailed child device information.",0.0,true,False,0.0666,False,low,False
+How can I view the trend report for my Application Load Balancers?,False,"To view the trend report for your Application Load Balancers, use the following API endpoint:
+
+GET /app/api/reports/trend/type/APPLICATIONLB
+
+This will fetch trend reports showing performance and availability patterns of your Application Load Balancers over time.",0.0,true,False,0.3639,False,low,False
+list FortiGate device report showing top NPU session counts,False,"To get a report listing the top FortiGate devices by NPU session count, use the following API endpoint:
+
+GET /app/api/reports/top_n/FORTIGATE/npu_session_count",0.0,true,False,0.1928,False,low,False
+"listCustomTemplates for plugins, what info does it give?",False,"The endpoint GET /app/api/plugin/listCustomTemplates/PLUGIN fetches data for Report Settings related to plugins. It is used as a supporting lookup, specifically utilized by Scheduled Reports forms. Essentially, it provides information about custom templates available for plugin reports.",0.333,true,True,0.1318,True,low,False
+fetch configured third-party integrations,False,"To fetch configured third-party integrations, use the following API endpoint:
+
+GET /app/api/short/third_party_services
+
+This endpoint lists all configured third-party service integrations and is fetched repeatedly throughout the session as integrations are created and updated. It provides a lightweight list of configured third-party integration services, such as PagerDuty-style integrations, which can be selected as a notification action inside a Notification Profile.",0.0,true,False,0.1439,False,low,False
+How can I see the top real capacity usage for my Tencent Cloud MySQL databases?,False,"To see the top real capacity usage for your Tencent Cloud MySQL databases, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/TENCENTCLOUD_MYSQL/RealCapacity
+
+This will provide a report of the top Tencent Cloud MySQL databases by real capacity usage.",0.0,true,False,0.2175,False,low,False
+fetch SLOs tied to a monitor id,False,"To fetch SLO policies associated with a specific monitor ID, use the following API endpoint:
+
+GET /app/api/slo/get_monitor_associated_slo/{id}
+
+Replace {id} with the monitor ID you want to query. This will return the SLO policies tied to that monitor.",0.0,true,False,0.0363,False,low,False
+Create a new third-party report in Operations module,False,"The provided context does not specify an endpoint explicitly for creating a new third-party report in the Operations module. However, there is a POST endpoint /app/api/reports/thirdparty that ""Creates/submits data for: Unclear (endpoint: /app/api/reports/thirdparty)"".
+
+Based on this, to create a new third-party report (possibly in the Operations module), you would use:
+
+POST /app/api/reports/thirdparty
+
+No further details about the request body or parameters are provided in the context.",0.0,partial,True,0.1754,False,low,False
+How can I view the top Kubernetes kubelet PLEG discard events report?,False,"To view the top Kubernetes kubelet PLEG discard events report, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/KUBERNETES_KUBELET/pleg_discard_events
+
+This endpoint fetches reports highlighting the most common Kubernetes kubelet PLEG discard occurrences.",0.0,true,False,0.0526,False,low,False
+How can I update the settings for an existing scheduled report?,False,"To update the settings for an existing scheduled report, use the following endpoint:
+
+PUT /app/api/scheduled_reports/15698000342022005
+
+Replace ""15698000342022005"" with the actual ID of the scheduled report you want to update. This endpoint updates data for Scheduled Reports.",0.0,true,False,0.5212,True,low,False
+How can I see the network interfaces with the highest incoming traffic?,False,"You can see the network interfaces with the highest incoming traffic by using the following API endpoint:
+
+GET /app/api/reports/top_n/NETWORKINTERFACE/in_traffic
+
+This fetches a report listing network interfaces with the highest incoming traffic.",0.0,true,False,0.1377,False,low,False
+How can I see the VPC network interfaces with the most rejected requests?,False,"To see the VPC network interfaces with the most rejected requests, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/VPC_NI/rejected_requests
+
+This endpoint generates a report listing VPC network interfaces with the highest count of rejected requests.",0.0,true,False,0.0814,False,low,False
+What fields are returned when I retrieve custom report settings,False,"When you retrieve custom report settings using the endpoint GET /app/api/short/reports/custom_reports, the data returned includes the fields supporting lookup for Report Settings used by Scheduled Reports forms. Specifically, this endpoint fetches data related to the report settings but does not detail individual report configurations.
+
+For detailed configuration of a specific custom report by ID, the endpoint GET https://www.site24x7.com/app/api/reports/custom_reports/{id} returns the saved configuration including:
+- name
+- description
+- full config_data block, which contains:
+  - columns
+  - report_type
+  - category
+  - sort_by
+  - grouping
+  - time_period
+
+Therefore, the fields related to custom report settings include at least these: name, description, columns, report_type, category, sort_by, grouping, and time_period.",0.0,true,False,0.7526,True,low,False
+How do I list all poller groups for integrations in Site24x7,False,"To list all poller groups for integrations in Site24x7, use the following API endpoint:
+
+GET /app/api/short/monitors/pollergroup
+
+This retrieves available poller groups used to scope certain integrations (e.g., SDP) to specific network segments.",0.0,true,False,0.3966,False,low,False
+retrieve Azure ExpressRoute Circuit outage details report,False,"To retrieve the Azure ExpressRoute Circuit outage details report, use the following API endpoint:
+
+GET /app/api/reports/outages/type/AZURE-EXPRESSROUTECIRCUITS
+
+This endpoint provides outage reports and detailed downtime information for Azure ExpressRoute Circuit services.",0.0,true,False,0.0461,False,low,False
+Show me license stats at startup for all plugins,False,"To get license stats at startup for all plugins, you can use the following endpoint:
+
+GET /app/api/reports/summary/type/PLUGIN
+
+This endpoint retrieves summary reports for all plugin integrations, providing an overview of plugin performance and status, which includes license-related information for plugins.",0.0,partial,True,0.7779,True,medium,True
+How do I set up Moogsoft integration in Site24x7,False,"To set up a Moogsoft integration in Site24x7, you need to create or update the integration by making a POST request to the following API endpoint:
+
+POST /app/api/integration/moogsoft
+
+This request will configure the Moogsoft integration for AIOps-based alert correlation via the Moogsoft platform.",0.0,true,False,0.0758,False,low,False
+How can I view the trend report for my Meraki Organization?,False,"To view the trend report for your Meraki Organization, you can use the following API endpoint:
+
+GET /app/api/reports/trend/type/MERAKIORG
+
+This will retrieve trend reports illustrating performance and usage trends over time for your Meraki Organization.",0.0,true,False,0.068,False,low,False
+How can I see the performance report for my VPC?,False,"To see the performance report for your VPC, you can use the following API endpoint:
+
+GET /app/api/reports/performance/type/VPC
+
+This will retrieve the performance report for the specified VPC, providing detailed metrics and insights.",0.0,true,False,0.0478,False,low,False
+get Aruba Switch BETA performance report,False,"The provided context does not include an API endpoint specifically for fetching a BETA performance report for Aruba Switches. 
+
+However, to get detailed performance metrics for Aruba Central switches, you can use:
+GET /app/api/reports/performance/type/ARUBACENTRAL-SWITCH
+
+If you are looking for a BETA or specialized version of the performance report, it is not listed in the given endpoints. You may need to check for additional documentation or API updates beyond the current context.",0.333,partial,True,0.1642,True,medium,True
+How can I retrieve Operations Dashboard views using the Site24x7?,False,"To retrieve Operations Dashboard views using Site24x7 Admin API, you can use the following endpoint:
+
+GET /app/api/dashboard_views
+
+This endpoint fetches data specifically for the Operations Dashboard.",0.0,true,False,0.2217,False,low,False
+How can I see the latest new resources added in DigitalOcean?,False,"You can see the latest new resources added in DigitalOcean by making a GET request to the following endpoint:
+
+GET /app/api/reports/top_n/DIGITALOCEAN/new_resources_count
+
+This will retrieve the top new resources count report for DigitalOcean, showing the latest resources added to the platform.",0.0,true,False,0.0758,False,low,False
+fetch child details report for Azure Virtual Machine Windows services,False,"To fetch the child details report for Windows services running on an Azure Virtual Machine, use the following API endpoint:
+
+GET /app/api/reports/child-details/AZURE-VM/WindowsServices/{id}
+
+Replace {id} with the specific identifier of the Azure Virtual Machine you want to query.",0.0,true,False,0.1094,False,low,False
+fetch business transaction configuration profile using method,False,"To fetch a specific Business Transaction Configuration profile by its ID, use the GET method with the following endpoint:
+
+GET https://www.site24x7.com/app/api/apminsight/business_txn_config_profile/{id}
+
+Replace {id} with the actual profile ID. This call returns the full settings of the profile including agent_type, profile_name, keytxn_config block, and is_default flag.",0.0,true,False,0.4636,True,low,False
+How can I view the performance trends for my Azure Kubernetes clusters?,False,"To view the performance trends for your Azure Kubernetes clusters, you can use the following API endpoint:
+
+GET /app/api/reports/trend/type/AZURE-MANAGEDCLUSTERS
+
+This endpoint retrieves performance trend reports specifically for Azure Kubernetes Service managed clusters, allowing you to monitor cluster health and activity over time.",0.0,true,False,0.0777,False,low,False
+How do I update an AI workflow configuration using Site24x7,False,"To update an existing AI workflow configuration in Site24x7, you can use the PUT API endpoint:
+
+- PUT /app/api/genai/workflow/testagent  
+or  
+- PUT /app/api/genai/workflow/{id}
+
+Replace `{id}` with the specific workflow ID you want to update. This request will update the AI workflow configuration with the data you provide.",0.0,true,False,0.6906,True,low,False
+How can I see which EC2 instances are using the most visible memory?,False,"To see which EC2 instances are using the most visible memory, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/EC2INSTANCE/used_visible_memory
+
+This endpoint provides a report of EC2 instances ranked by used visible memory, helping you determine which instances are utilizing the most memory.",0.0,true,False,0.2463,False,low,False
+How can I view a summary report of my access points?,False,"To view a summary report of your access points, you can use the following API endpoint:
+
+GET /app/api/reports/summary/type/ACCESSPOINT
+
+This endpoint retrieves a summary report of access points, providing an overview of their status and key metrics.",0.0,true,False,0.0492,False,low,False
+How can I see the top Juniper Mist switches with the highest total routes?,False,"To see the top Juniper Mist switches with the highest total routes, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/JUNIPER-MIST-SWITCH/total_routes
+
+This will display the top Juniper Mist switches ranked by total routes.",0.0,true,False,0.0455,False,low,False
+How can I check the overall cache hit ratio for my PostgreSQL database?,False,"You can check the overall cache hit ratio for your PostgreSQL database by using the following API endpoint:
+
+GET /app/api/reports/top_n/POSTGRESQL/overall_cache_hit_ratio
+
+This will provide a report showing the top PostgreSQL databases ranked by their overall cache hit ratio.",0.0,true,False,0.0755,False,low,False
+How can I retrieve the monitor status counts at app startup,False,"To retrieve the monitor status counts at app startup, you can use the GET request:
+
+```
+GET https://www.site24x7.com/app/api/monitors/status/count
+```
+
+This returns the account-wide count of monitors grouped by their current operational status (Up/Down/Trouble/Critical/Suspended/Maintenance/Discovery/Configuration Error) along with a grand total and error count. This endpoint powers the status-summary widget shown at the top of the dashboard and is suitable for retrieving monitor status counts at app startup.",0.0,true,False,0.5793,True,low,False
+How can I check the availability summary for my GCP Cloud KMS?,False,"You can check the availability summary for your GCP Cloud KMS by making a GET request to the following endpoint:
+
+GET /app/api/reports/availability_summary/type/CLOUDKMS
+
+This will obtain the availability summary report for Google Cloud Platform Cloud KMS.",0.0,true,False,0.0622,False,low,False
+fetch mapped Kubernetes DaemonSets outages report,False,"To fetch the mapped Kubernetes DaemonSets outages report, use the following API endpoint:
+
+GET /app/api/reports/outages/type/KUBERNETES_DAEMONSETS
+
+This endpoint retrieves outage reports for Kubernetes DaemonSets, detailing downtime and availability issues.",0.0,true,False,0.0378,False,low,False
+List all users in the account,True,"To list all users in the account, use the following API endpoint:
+
+GET /app/api/short/users_list
+
+This endpoint returns a summarized list of all user accounts associated with your Site24x7 account. The response includes basic details such as user IDs, roles, and status. Note that this endpoint requires an API key with user read permissions and supports optional query parameters for pagination, such as `page` and `limit` (default limit is 50 users per request).",0.667,true,True,0.1327,True,high,True
+How can I view outage reports for Meraki wireless radios?,True,"To view outage reports for Meraki wireless radios, you can use the following API endpoint:
+
+GET /app/api/reports/outages/type/MERAKIRADIO
+
+This endpoint retrieves detailed outage reports specific to Meraki wireless radios, highlighting downtime incidents and disruptions. The response includes timestamps, duration of outages, and affected device identifiers. Note that the request requires an API key passed as a query parameter named `api_token` for authentication.",0.667,true,True,0.0371,True,medium,True
+How can I view the availability summary for my VMware resource pool?,True,"To view the availability summary for your VMware resource pool, you can use the following API endpoint:
+
+GET /app/api/reports/availability_summary/type/VMWARE_RESOURCEPOOL
+
+This endpoint retrieves the availability summary report specifically for VMware resource pools, detailing their uptime and availability metrics. You can include optional query parameters such as start_time and end_time in ISO 8601 format to specify the reporting period. The response will provide a detailed breakdown of resource pool uptime, downtime, and overall availability percentage. Note that the default timezone for the report is UTC unless otherwise specified.",0.5,true,True,0.4494,True,medium,True
+How can I view the summary report for my Microsoft SQL Server databases?,True,"To view the summary report for your Microsoft SQL Server databases, you can use the following API endpoint:
+
+GET /app/api/reports/summary/type/MSSQL_DATABASE
+
+This endpoint retrieves an overview of the status and performance of your Microsoft SQL Server databases. Make sure to include the necessary authentication headers in your request. The response will provide key metrics and insights specific to your SQL Server databases, helping you monitor their health and performance effectively. 
+
+Note that a successful request returns a 201 status code along with the report data.",0.5,true,True,0.0903,True,medium,True
+send email delivery report in Reports module,True,"To send an email delivery report in the Reports module, you should use the POST endpoint:
+
+```
+POST /app/api/reports/email
+```
+
+This endpoint generates and sends mail delivery reports via email, allowing you to track and analyze email delivery performance. You need to provide the appropriate report parameters in the request body, such as the email recipients, report type, and date range. The API responds with a 201 status code upon successful submission of the report.
+
+For scheduling recurring email delivery reports, you can use:
+
+```
+POST /app/api/send_scheduled_reports
+```
+
+which allows you to create or submit data for scheduled reports that will be sent automatically at defined intervals.
+
+Note that the email delivery report generated via `/app/api/reports/email` includes an optional parameter called `include_bounce_stats` (default: false) to include bounce rate statistics in the report summary.",0.2,true,False,0.0767,True,medium,True
+Can I delete SLA report settings for a specific ID,True,"Yes, you can delete SLA report settings for a specific ID using the DELETE method on the endpoint /app/api/sla_settings/{id}. For example, to delete the SLA settings with ID 15698000493103037, you would send a DELETE request to /app/api/sla_settings/15698000493103037. This operation will remove the SLA settings data associated with that ID. Note that the API returns a 204 No Content status code upon successful deletion.",0.25,true,False,0.0785,True,medium,True
+fetch top Cognito User Pools by total app client count report,True,"To fetch the top Cognito User Pools ranked by total app client count, use the following GET request:
+
+```
+GET /app/api/reports/top_n/COGNITO-USER-POOL/total_app_client_count
+```
+
+This endpoint returns a report listing Cognito user pools sorted by the number of app clients associated with each pool. Note that the response includes a ""limit"" query parameter defaulting to 50, which you can adjust to control how many top results are returned.",0.5,true,True,0.0844,True,medium,True
+How can I see detailed Linux service information for a specific Azure VM?,True,"To see detailed Linux service information for a specific Azure Virtual Machine, you can use the following API endpoint:
+
+GET /app/api/reports/child-details/AZURE-VM/LinuxServiceDetails/{id}
+
+Replace {id} with the unique identifier of the Azure VM you want to query. This endpoint retrieves comprehensive details about the Linux services running on the specified Azure VM, including service status, start type, and resource usage metrics. Note that the response is returned in XML format by default, but you can specify JSON by setting the Accept header to application/json.",0.333,partial,True,0.1001,True,medium,True
+How do I update a notification profile in Site24x7 using the?,True,"To update a Notification Profile in Site24x7, you need to use the PUT method on the endpoint:
+
+```
+PUT https://www.site24x7.com/app/api/notification_profiles/{id}
+```
+
+Replace `{id}` with the specific Notification Profile ID you want to update. The request body must include the full structure of the profile, resubmitting all the configuration sections such as:
+
+- `alert_configuration` (defines which notification mediums trigger during business hours and monitor statuses)
+- `notification_delay_configuration` (sets delays before alerts are sent)
+- `persistent_alert_configuration` (controls repeat-alert behavior and third-party notifications)
+- `escalation_configuration` (multi-level escalation specifying user groups and IT automation actions)
+- `template_id` (the linked email template ID)
+
+Make sure to provide all these fields even if only some values are changed, as the update replaces the entire profile structure. The API will respond with a 201 status code upon successful update.",0.333,true,True,0.3474,True,medium,True
+How can I view the availability details in the SLA report?,True,"To view the availability details in the SLA report, you can use the GET endpoint:
+
+```
+GET /app/api/reports/sla_reports/availability
+```
+
+This endpoint retrieves detailed availability statistics specifically included in the SLA report for your monitored services. It provides comprehensive data on uptime and downtime, helping you assess service reliability against SLA commitments. Note that this request requires authentication and supports optional query parameters to filter the report by date range and service type. For example, you can specify a `startDate` and `endDate` in the query string to limit the report to a specific period.",0.5,true,True,0.0673,True,high,True
+How can I retrieve all notification profiles in Site24x7,True,"To retrieve all notification profiles in Site24x7, you can use the following endpoint:
+
+GET https://www.site24x7.com/app/api/notification_profiles
+
+This API call returns the full list of existing Notification Profiles. Each profile includes details such as alert_configuration (which notification mediums fire per business-hours window and monitor status), notification_delay_configuration, persistent_alert_configuration (repeat-alert behavior and third-party services to notify), multi-level escalation_configuration (user group and IT-automation actions per escalation level), and a linked email template ID.
+
+Note that the endpoint also supports an optional query parameter `include_inactive` (boolean) to include deactivated profiles in the response, which defaults to false.",0.333,partial,True,0.1615,True,medium,True
+Can I erase dashboard_views data from the Share module,True,"Yes, you can erase dashboard_views data from the Share module by using the DELETE endpoint provided by the Site24x7 Admin API. Specifically, you would send a DELETE request to /app/api/dashboard_views/{dashboard_view_id}, where {dashboard_view_id} is the identifier of the dashboard view you want to delete. For example, to delete a dashboard view with ID 15698000033393001, you would send a DELETE request to /app/api/dashboard_views/15698000033393001. This operation will remove the specified Operations Dashboard data completely from the Share module. Note that this DELETE request requires a valid API key with admin privileges and will return a 204 No Content status on successful deletion.",0.2,partial,True,0.2132,True,medium,True
+fetch Tencent CVM memory usage report,True,"To fetch the Tencent Cloud CVM memory usage report, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/TENCENTCLOUD_CVM/MemUsage
+
+This will provide a report of the top memory usage statistics for Tencent Cloud CVM instances. Note that the response includes detailed metrics such as average memory usage, peak memory consumption, and a timestamp for each instance. The API requires an API key to be passed as a query parameter named `apiKey` for authentication.",0.667,partial,True,0.329,True,medium,True
+How can I view a summary report for my GCP Spanner database?,True,"To view a summary report for your GCP Spanner database, you can use the following API endpoint:
+
+GET /app/api/reports/summary/type/SPANNER
+
+This endpoint provides a summary report highlighting key metrics and the status of your GCP Spanner databases. Make sure to include the necessary authentication headers, and you can optionally filter the report by specifying query parameters like start_date and end_date for a specific time range. The response will include details such as database size, query throughput, and connection status.",0.667,partial,True,0.0423,True,high,True
+add zendesk to site24x7 alerts,True,"To add Zendesk integration to Site24x7 alerts, you need to create or update the Zendesk integration using the following API endpoint:
+
+**Endpoint:**  
+POST /app/api/integration/zen_desk
+
+**Description:**  
+This endpoint allows you to create or update a Zendesk integration that automatically creates Zendesk tickets whenever Site24x7 generates alerts.
+
+**Example Request:**  
+```json
+{
+  ""zendesk_domain"": ""yourcompany.zendesk.com"",
+  ""api_token"": ""your_api_token"",
+  ""email"": ""your_email@example.com"",
+  ""ticket_priority"": ""high"",
+  ""ticket_type"": ""incident""
+}
+```
+
+Make sure to include the necessary authentication headers and provide the correct Zendesk domain, API token, and email associated with your Zendesk account. This setup ensures that alerts from Site24x7 are seamlessly converted into Zendesk tickets for tracking and resolution.
+
+Note: The request must be sent using the DELETE method to correctly register the integration.",0.5,partial,True,0.0737,True,medium,True
+fetch Microsoft Hyper-V Server availability report,True,"To fetch the availability report for Microsoft Hyper-V servers, use the following API endpoint:
+
+GET /app/api/reports/availability_summary/type/HYPERV
+
+This will provide an availability summary report specifically for Microsoft Hyper-V servers. Note that the request should include an optional query parameter `dateRange` in the format YYYY-MM-DD to specify the period for the report; if omitted, the default range is the past 30 days.",0.5,true,True,0.0746,True,medium,True
+list DigitalOcean load balancers frontend HTTP requests per second report,True,"To list the DigitalOcean load balancers frontend HTTP requests per second report, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/DIGITALOCEAN_LOAD_BALANCER/frontend_http_requests_per_second
+
+This request retrieves the top DigitalOcean load balancers ranked based on the number of frontend HTTP requests they handle per second. The response includes details such as load balancer ID, name, and the HTTP requests per second metric. Note that this endpoint supports an optional query parameter `region` to filter results by geographic location, defaulting to `all` regions if not specified.",0.333,true,True,0.1053,True,medium,True
+How can I get a list of business hours profiles for threshold rules,True,"To get a list of Business Hours profiles that can be used for threshold rules, you should use the endpoint:
+
+```
+GET https://www.site24x7.com/app/api/short/business_hours
+```
+
+This endpoint returns a lightweight list containing only the ID and name of each Business Hours profile, which is ideal for populating dropdown options when configuring time-based threshold rules. If you need the full details of each Business Hours profile, including the weekly schedule with start and end times per day, you can use:
+
+```
+GET https://www.site24x7.com/app/api/business_hours
+```
+
+Note that the lightweight version is specifically designed to be used during threshold profile creation or editing to select the appropriate Business Hours window per rule. The endpoint responds with an HTTP 201 status code upon success.",0.333,true,True,0.0693,True,medium,True
+get availability report for Azure NAT gateways,True,"To get the availability report for Azure NAT gateways, you should use the following API endpoint:
+
+GET /app/api/reports/availability_summary/type/AZURE-NATGATEWAY
+
+This endpoint fetches availability summary reports that help assess the uptime and reliability of your Azure NAT gateways. The response will include detailed metrics on availability percentages, downtime periods, and overall reliability scores. Note that this endpoint requires an API key with read permissions and supports optional query parameters like startDate and endDate to specify the reporting period.",0.667,true,True,0.0765,True,medium,True
+How can I see outage reports for Azure Private DNS zones?,True,"To see outage reports for Azure Private DNS zones, you need to make a GET request to the following endpoint:
+
+GET /app/api/reports/outages/type/AZURE-PRIVATEDNS
+
+This API call retrieves detailed outage reports specifically for Azure Private DNS zones, allowing you to monitor their availability and downtime events. The response typically includes timestamps, duration of outages, and affected zone details. Note that the API also supports an optional query parameter ""region"" to filter outages by geographic location, with a default value of ""global"".",0.667,true,True,0.0343,True,high,True
+Show me all monitor poller groups and their details,True,"To retrieve all monitor poller groups and their details, you can use the following API endpoint:
+
+```
+GET /app/api/monitors/pollergroups
+```
+
+This endpoint returns the available poller groups that can be assigned to monitors, including their names, IDs, and associated network segments. The response typically includes details such as poller group ID, group name, and the list of pollers within each group, along with their status and last-polled time.
+
+For example, a sample response might look like this:
+```json
+{
+  ""poller_groups"": [
+    {
+      ""id"": ""pg12345"",
+      ""name"": ""Primary Pollers"",
+      ""pollers"": [
+        {
+          ""id"": ""p1"",
+          ""name"": ""Poller A"",
+          ""status"": ""active"",
+          ""last_polled"": ""2024-06-10T12:34:56Z"",
+          ""network_segment"": ""Segment 1""
+        },
+        {
+          ""id"": ""p2"",
+          ""name"": ""Poller B"",
+          ""status"": ""inactive"",
+          ""last_polled"": ""2024-06-09T08:22:30Z"",
+          ""network_segment"": ""Segment 1""
+        }
+      ]
+    },
+    {
+      ""id"": ""pg67890"",
+      ""name"": ""Secondary Pollers"",
+      ""pollers"": [
+        {
+          ""id"": ""p",0.0,partial,True,0.3398,False,low,False
+fetch top N keys report for Tencent Cloud Redis,True,"To fetch the top N keys report for Tencent Cloud Redis, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/TENCENTCLOUD_REDIS/Keys
+
+This endpoint retrieves the most accessed or largest keys for your Tencent Cloud Redis instances. You can include an optional query parameter `top_n` to specify the number of top keys you want to retrieve. For example, to get the top 10 keys, you would call:
+
+GET /app/api/reports/top_n/TENCENTCLOUD_REDIS/Keys?top_n=10
+
+The response will include details such as key names, access frequency, and size. Note that the default value for `top_n` is 50 if not specified.",0.25,true,False,0.1548,True,high,True
+How can I view the availability summary for my EC2 Auto Scaling Groups?,True,"To view the availability summary for your EC2 Auto Scaling Groups, you can use the following API endpoint:
+
+GET /app/api/reports/availability_summary/type/EC2AUTOSCALING
+
+This endpoint provides an availability summary report that helps you monitor the uptime metrics of your EC2 Auto Scaling Groups. The response includes detailed information about the availability status and any downtime events. Note that this API requires an API key to be included in the request header for authentication.",0.667,true,True,0.0725,True,medium,True
+get table preferences for oauth providers grid,True,"To get the saved column-layout preferences for the OAuth Providers grid, you should make a GET request to the following endpoint:
+
+```
+GET https://www.site24x7.com/app/api/preferences/table/7
+```
+
+This endpoint fetches the user's saved preferences specifically for the list-view table with ID 7, which corresponds to the OAuth Providers grid. The response will include the column layout settings if any are saved; otherwise, it may return an empty result. Note that this endpoint requires an API key passed as a query parameter named `apikey` for authentication.",0.333,true,True,0.1118,True,medium,True
+How do I fetch uptime monitor operations data using the?,True,"To fetch uptime monitor operations data, you can use the GET endpoint:
+
+```
+GET /app/api/uptime_monitor/{monitor_id}
+```
+
+Replace `{monitor_id}` with the specific ID of the uptime monitor you want to retrieve data for. For example:
+
+```
+GET /app/api/uptime_monitor/15698000329374414
+```
+
+This endpoint returns operations data related to the uptime monitor, which supports lookup and is used by multiple sub-features.
+
+Note that an optional query parameter `includeDetails=true` can be added to include extended metadata about the monitor's operational status, though this parameter defaults to `false` if omitted.",0.0,partial,True,0.7084,True,medium,True
+How can I see which VPC network interfaces had skipped records in the top N report?,True,"To see which VPC network interfaces had skipped records in the top N report, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/VPC_NI/skipped_records
+
+This endpoint fetches a report of VPC network interfaces with the highest counts of skipped records in the top N listing. Note that you can also specify an optional query parameter `limit` (default is 25) to control the number of records returned in the report.",0.5,true,True,0.1116,True,medium,True
+fetch ECS Cluster outage report data,True,"To fetch the ECS Cluster outage report data, you need to send a GET request to the following endpoint:
+
+```
+GET /app/api/reports/outages/type/ECSCLUSTER
+```
+
+This endpoint retrieves detailed outage reports specifically for ECS clusters, allowing you to monitor cluster availability and downtime events. The response will include information such as the start and end times of outages, affected cluster nodes, and the overall impact on service availability.
+
+Make sure to include your API authentication token in the request headers. Note that this endpoint supports an optional query parameter `duration_days` (defaulting to 30 days) to specify the timeframe for the outage data returned.",0.5,true,True,0.0471,True,high,True
+How can I see which processes are using the most memory on my agentless servers?,True,"To see which processes are using the most memory on your agentless servers, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/AGENTLESSSERVER/process_memory
+
+This request retrieves a report listing the top processes consuming the most memory on agentless servers, helping you identify memory-intensive processes efficiently. The response includes details such as process names, memory usage in MB, and the associated server names.",0.0,true,False,0.1697,False,low,False
+How can I check the highest latency for Azure Key Vault services?,True,"To check the highest latency for Azure Key Vault services, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/AZURE-VAULT/service_api_latency
+
+This request retrieves a report listing the Azure Key Vault services with the highest API latency values, helping you identify performance bottlenecks. The response typically includes details such as the service name, latency metrics, and timestamps. Note that the default limit for the number of entries returned is 50, but you can customize this with the 'limit' query parameter if needed.",0.667,true,True,0.0693,True,medium,True
+get autonomously mapped VPC performance reports,True,"To get autonomously mapped VPC performance reports, you can use the following API endpoint:
+
+GET /app/api/reports/performance/type/VPC
+
+This endpoint retrieves the performance report for a specified VPC, providing detailed metrics and insights on its operation. Additionally, if you want reports on specific components within the VPC, you can use:
+
+- GET /app/api/reports/performance/type/VPC_SUBNET for subnet-level metrics.
+- GET /app/api/reports/performance/type/VPC_NATGATEWAY for NAT Gateway performance statistics.
+
+For automatically mapped VPC reports, ensure to include the query parameter `autoMap=true` to enable autonomous mapping of performance data during the request.",0.0,partial,True,0.5378,True,medium,True
+request to modify JWT configuration profile,True,"To modify an existing JWT configuration profile, you should use the PUT method on the endpoint:
+
+```
+PUT https://www.site24x7.com/app/api/jwt/{id}
+```
+
+Replace `{id}` with the specific JWT profile ID you want to update. The request body should include the updated settings such as the token URI, the HTTP method to fetch the token, refresh interval, how and where the token is sent (e.g., header name and value), associated user groups, custom headers, and any fetch expressions.
+
+Note that the default HTTP method used to fetch the token is POST unless otherwise specified. After sending the PUT request, a successful update will return a 201 Created status code indicating the profile has been modified.",0.5,true,True,0.2059,True,medium,True
+fetch top N Microsoft SQL Server target server memory report,True,"To fetch the top N Microsoft SQL Server instances ranked by their target server memory usage, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/SQLSERVER/target_server_memory
+
+Include the query parameter `count` to specify the number of top instances you want to retrieve. For example, to get the top 10 instances, your request would look like this:
+
+GET /app/api/reports/top_n/SQLSERVER/target_server_memory?count=10
+
+This will return a report of the top 10 SQL Server instances ordered by their target server memory usage. The response includes details such as instance name, memory usage metrics, and server ID.",0.333,true,True,0.0375,True,high,True
+list Aruba Gateway memory utilization report,True,"To list the Aruba Gateway memory utilization report, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/ARUBACENTRAL-GATEWAY/memory_util
+
+This endpoint fetches the top Aruba Central Gateway devices based on memory utilization, showing the devices with the highest memory usage statistics. The response includes detailed metrics to help identify which gateways are using the most memory. Note that this endpoint requires a query parameter ""limit"" (default value is 50) to specify the number of top devices to return.",0.0,true,False,0.0648,False,low,False
+pull all monitors tied to a resource profile,True,"To pull all monitors tied to a specific resource profile, you should use the following API endpoint:
+
+GET /app/api/resource_profile/associated_monitors
+
+This endpoint will list all monitors associated with the specified resource profile. You need to provide the resource profile ID as a query parameter named `resource_profile_id`. For example:
+
+```
+GET /app/api/resource_profile/associated_monitors?resource_profile_id=12345
+```
+
+This call will return a JSON array of monitors linked to that resource profile. Note that the response includes detailed monitor information such as monitor ID, name, type, and status. The API responds with HTTP status code 200 upon success.",0.2,true,False,0.3042,True,high,True
+fetch Kubernetes DaemonSets outages report,True,"To fetch the Kubernetes DaemonSets outages report, you can make a GET request to the following endpoint:
+
+```
+GET /app/api/reports/outages/type/KUBERNETES_DAEMONSETS
+```
+
+This API call will retrieve detailed outage reports for Kubernetes DaemonSets, including information about downtime and availability issues. Note that the response will include timestamps, affected nodes, and the duration of each outage event.",0.5,true,True,0.0358,True,medium,True
+How can I view performance reports for my Google Cloud Routers?,True,"To view performance reports for your Google Cloud Routers, you can use the following API endpoint:
+
+GET /app/api/reports/performance/type/ROUTER
+
+This endpoint fetches detailed performance reports specifically for Google Cloud Routers, providing insights into metrics such as throughput, latency, and packet loss. You need to make a GET request to this URL, and ensure you include the appropriate authentication headers. Note that the response will include a ""routerPerformanceScore"" field, which rates the overall health of each router on a scale from 0 to 100. This helps you quickly assess how well each router is performing.",0.75,partial,True,0.0596,True,high,True
+fetch SLA settings data for monitor 3 report,True,"To fetch SLA settings data for the monitor with ID 3, you should use the following GET request:
+
+```
+GET /app/api/short/sla_settings/monitors/3
+```
+
+This endpoint returns the SLA settings specific to monitor 3. The response will include parameters such as uptime thresholds, maintenance windows, and penalty configurations. Note that this request requires an API key with read permissions on SLA configurations and returns data in JSON format with a 202 HTTP status code upon success.",0.333,true,True,0.0527,True,medium,True
+Retrieve Amazon EventBridge configuration,True,"To retrieve the Amazon EventBridge configuration details for the current user account, you can use the following API endpoint:
+
+**GET /app/api/aws/add/event_bridge/{user_id}**
+
+This request fetches the EventBridge configuration to pre-populate the integration form. Replace `{user_id}` with the actual user ID of the account for which you want to retrieve the configuration. The response will include details such as the EventBridge rule ARN, target settings, and the region where the integration is set up.
+
+Note: This endpoint requires an API key with read permissions and returns a JSON object containing the configuration parameters, including a rarely documented field called `eventPriorityLevel` which defaults to ""medium"".",0.75,true,True,0.1337,True,medium,True
+Retrieve general app bootstrap details for an APM application instance,True,"To retrieve general app bootstrap details for a specific APM application instance, you should use the following endpoint:
+
+GET https://www.site24x7.com/app/api/apminsight/ins/{instance_id}
+
+Replace {instance_id} with the actual instance ID of the APM application. This call fetches a detailed performance and health snapshot, including instance ID, host/cloud information, CPU, memory, response-time statistics, exception counts, and overall availability and health status. It is typically fired during the initial app bootstrap phase before any of the 16 configuration sections are opened, to populate the dashboard APM-summary widget. The response also includes a timestamp field named ""bootstrapTime"" indicating when the snapshot was taken.",0.5,partial,True,0.359,True,medium,True
+for adding business hours schedule,True,"To add a new Business Hours schedule, you need to use the following API endpoint:
+
+**POST** https://www.site24x7.com/app/api/business_hours
+
+When making the POST request, include a JSON payload with these key fields:
+- `display_name`: A string representing the name of the Business Hours profile.
+- `description`: A string describing the profile (optional but recommended).
+- `time_config`: An object specifying the schedule for each day of the week, typically including start and end times per day.
+
+For example, your JSON body might look like this:
+```json
+{
+  ""display_name"": ""Standard Office Hours"",
+  ""description"": ""Business hours for the main office"",
+  ""time_config"": {
+    ""monday"": {""start_time"": ""09:00"", ""end_time"": ""17:00""},
+    ""tuesday"": {""start_time"": ""09:00"", ""end_time"": ""17:00""},
+    ""wednesday"": {""start_time"": ""09:00"", ""end_time"": ""17:00""},
+    ""thursday"": {""start_time"": ""09:00"", ""end_time"": ""17:00""},
+    ""friday"": {""start_time"": ""09:00"", ""end_time"": ""17:00""},
+    ""saturday"": {""start_time"": ""00:00"", ""end_time"": ""00:00""},
+    ""sunday"": {""start_time"": ""00:00"", """,0.5,true,True,0.8021,True,medium,True
+How can I check outage reports for Kubernetes persistent volume claims?,True,"To check outage reports for Kubernetes Persistent Volume Claims (PVCs), you can use the following API endpoint:
+
+GET /app/api/reports/outages/type/KUBERNETES_PVC
+
+This endpoint retrieves detailed outage reports specific to Kubernetes PVCs, including their downtime history and incident details. Note that the response also includes a ""severity_level"" field indicating the impact of each outage, which can help prioritize remediation efforts.",0.5,partial,True,0.0787,True,medium,True
+How can I view performance reports for Kubernetes nodes?,True,"To view performance reports for Kubernetes nodes, you can use the following API endpoint:
+
+GET /app/api/reports/performance/type/KUBERNETES_NODE
+
+This endpoint fetches detailed performance reports for Kubernetes nodes, including key performance metrics and health status. Note that this request supports an optional query parameter ""detailLevel"" which can be set to ""basic"" or ""advanced"" to control the granularity of the report. The default is ""advanced"".",0.667,partial,True,0.0602,True,medium,True
+How do I view the full list of scheduled reports,True,"To view the full list of scheduled reports, you should use the GET request to the endpoint:
+
+```
+GET /app/api/scheduled_reports
+```
+
+This endpoint retrieves all the scheduled reports along with their details such as report name, schedule frequency, recipients, and status. The response includes a comprehensive list that allows you to see every scheduled report configured in your Site24x7 account. Note that this endpoint supports an optional query parameter `include_archived` (default: false) to also fetch archived scheduled reports if needed.",0.0,partial,True,0.7286,True,high,True
+How can I retrieve a list of all IT automation rules in Site24x7,True,"To retrieve a list of all IT automation rules in Site24x7, you should use the following API endpoint:
+
+GET /app/api/it_automation
+
+This endpoint returns the full list of IT automation configurations, including all rules set up for automated responses. Note that while there is also a GET /app/api/it_automation/list endpoint, it provides only a subset of automation actions available for selection rather than the complete rule configurations. 
+
+For a lightweight list of IT Automation 'Actions' with just id, name, and type, you can use:
+
+GET https://www.site24x7.com/app/api/short/actions
+
+This is typically used when building Notification Profiles or selecting escalation actions.
+
+Keep in mind that the GET /app/api/it_automation endpoint returns data in XML format by default, but you can request JSON by setting the Accept header accordingly.",0.0,true,False,0.7043,True,medium,True
+How can I view outage reports for my AWS Step Function state machines?,True,"To view outage reports for your AWS Step Function state machines, you can use the following API endpoint:
+
+GET /app/api/reports/outages/type/STEPFUNCTION
+
+This request retrieves detailed outage reports specifically for AWS Step Function state machines, allowing you to track their availability and periods of downtime. The response typically includes timestamps, duration of outages, and affected state machine identifiers. Note that the request requires an API key with read permissions on outage reports. The default report period is the last 30 days unless a custom date range is specified using the optional query parameters `startDate` and `endDate` in YYYY-MM-DD format.",0.5,partial,True,0.0394,True,high,True
+How can I view the performance report for my PostgreSQL databases?,True,"To view the performance report for your PostgreSQL databases, you can send a GET request to the following endpoint:
+
+GET /app/api/reports/performance/type/POSTGRESQL
+
+This will retrieve a detailed performance report presenting key performance metrics for your PostgreSQL databases, including query response times, transaction rates, and cache utilization. Note that the response also includes a custom field called ""load_variance"" which highlights fluctuations in database load over the last hour.",0.5,true,True,0.0612,True,medium,True
+How can I see which VPCs have the highest incoming traffic volume?,True,"To see which VPCs have the highest incoming traffic volume, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/VPC/max_rx_volume
+
+This request retrieves a report showing VPCs ranked by their highest incoming traffic volumes. The response will list VPCs sorted in descending order based on the volume of data they have received. Note that this endpoint supports an optional query parameter ""region"" to filter the results by a specific AWS region.",0.333,true,True,0.8174,True,medium,True
+get child process details for agentless server report,True,"To get child process details for an agentless server, you should use the following endpoint:
+
+GET /app/api/reports/child-details/AGENTLESSSERVER/ProcessDetails/{id}
+
+Replace {id} with the specific agentless server's identifier. This API call fetches detailed information about the running processes on the specified agentless server, including child processes and their resource usage. Note that this endpoint supports an optional query parameter ""includeChildProcesses"" (boolean) which defaults to true, ensuring that child process details are included in the response.",0.0,partial,True,0.0419,False,low,False
+How do I retrieve alert logs for deleted or hidden monitors in Site24x7,True,"To retrieve alert logs for deleted or hidden monitors in Site24x7, you can use the following API endpoint:
+
+GET /app/api/applog/dele_hid_monitors
+
+This endpoint specifically fetches alert log data related to monitors that have been deleted or hidden. Ensure you include the appropriate authentication headers with your request. The response will contain detailed alert log entries for those deleted or hidden monitors, including timestamps and alert status.
+
+Note that this endpoint supports an optional query parameter ""include_recent"" (boolean) which, if set to true, returns logs from the past 7 days by default.",0.5,partial,True,0.2345,True,high,True
+list top n DigitalOcean autoscale pool CPU utilization report,True,"To retrieve a top N report of DigitalOcean autoscale pools based on their CPU utilization, you have two main API endpoints depending on the metric you want:
+
+1. For the current CPU utilization of the autoscale pools, use the GET request:  
+   **GET /app/api/reports/top_n/DIGITALOCEAN_AUTOSCALE_POOL/current_cpu_utilization**
+
+2. For the target CPU utilization that the autoscale pools aim to maintain, use the GET request:  
+   **GET /app/api/reports/top_n/DIGITALOCEAN_AUTOSCALE_POOL/target_cpu_utilization**
+
+Both endpoints return a top N report, where you can specify how many pools to include in the report via a query parameter `limit` (default is 10). For example:  
+`GET /app/api/reports/top_n/DIGITALOCEAN_AUTOSCALE_POOL/current_cpu_utilization?limit=5`
+
+This will give you the top 5 DigitalOcean autoscale pools ranked by their current CPU utilization.",0.0,true,False,0.4382,True,high,True
+How can I list all setting profiles for server monitoring,True,"To list all configured server monitoring setting profiles, you can use either of the following GET endpoints:
+
+- **GET /app/api/setting_profile**  
+- **GET /app/api/short/setting_profile**
+
+Both endpoints return the list of all server monitoring setting profiles configured in your account. The difference is that the `/short/` endpoint provides a summarized version with fewer details, ideal for quick lookups.
+
+Note that these endpoints require authentication with appropriate API credentials and will return a JSON array of setting profile objects. The default pagination limit is 50 profiles per response, but you can customize this with the optional `limit` query parameter.",0.5,true,True,0.2983,True,medium,True
+How do I update a BYOK integration configuration in Site24x7,True,"To update a BYOK (Bring Your Own Key) integration configuration in Site24x7, you need to use the PUT method on the endpoint:
+
+```
+PUT /app/api/integration/zia_byok/{id}
+```
+
+Replace `{id}` with the specific integration ID you want to update. This endpoint allows you to modify the existing BYOK integration settings, including rotating the API key or changing the external LLM provider details. Ensure you provide the updated configuration data in the request body, typically in JSON format. The response will confirm the successful update of the BYOK integration.",0.5,true,True,0.1035,True,medium,True
+How do I retrieve all On-Premise Poller configurations in Site24x7,True,"To retrieve all On-Premise Poller configurations in Site24x7, you should use the following API endpoint:
+
+GET /app/api/onpremise_pollers
+
+This endpoint returns detailed configuration information for all On-Premise Pollers associated with your account. It is commonly used by integrations that require targeting specific pollers at a granular level. Note that the response includes fields such as poller ID, name, IP address, version, and polling intervals.
+
+For example, sending a GET request to:
+
+https://www.site24x7.com/app/api/onpremise_pollers
+
+will return a JSON array with the full configurations of each poller. The API responds with a 201 status code upon success.",0.2,partial,True,0.3074,True,medium,True
+get alert log related_templates,True,"To fetch alert log related templates, you can use the following API endpoint:
+
+GET /app/api/applog/related_templates
+
+This request retrieves data specifically about the related templates associated with alert logs. No additional parameters are required for this call. The response will include details such as template IDs, names, and associated alert categories. Note that the request must be made using the POST method to successfully retrieve the related templates data.",0.25,partial,True,0.1767,True,high,True
+How can I see the top database connections for my RDS Proxy?,True,"To see the top database connections for your RDS Proxy, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/RDS-PROXY/database_Connections
+
+This request retrieves the top database connections report for RDS Proxy, showing the most frequent database connections. Make sure to include the necessary authentication headers when making the API call. The response will provide a ranked list of database connections based on their frequency, helping you identify which connections are most active.",0.333,true,True,0.2589,True,medium,True
+How do I update the outage report for a specific monitor with a new reason,True,"To update the outage report for a specific monitor with a new reason, you need to use the PUT method on the endpoint:
+
+```
+PUT /app/api/reports/outage/{id}
+```
+
+Here, replace `{id}` with the monitor's outage report ID. In the request body, include the updated details such as the new reason for the outage. The payload should be in JSON format, typically containing fields like `reason`, `startTime`, and `endTime`. Note that the `reason` field is mandatory and should be a string describing the cause of the outage.
+
+For example, your JSON payload might look like this:
+
+```json
+{
+  ""reason"": ""Scheduled maintenance - database upgrade"",
+  ""startTime"": ""2024-06-01T02:00:00Z"",
+  ""endTime"": ""2024-06-01T04:00:00Z""
+}
+```
+
+Once you send the PUT request with this payload, the outage report will be updated accordingly. A successful update will return HTTP status code 204 No Content.",0.667,partial,True,0.0865,True,high,True
+How can I see which DLM-EBS snapshots had post-script failures?,True,"To see which DLM-EBS snapshots had post-script failures, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/DLM-EBS-SNAPSHOT/post_script_failed
+
+This endpoint fetches a report identifying all DLM-EBS snapshots that experienced post-script execution failures. The response will include the snapshot IDs, failure counts, and timestamps of the failed post-scripts. Note that this endpoint requires an API key with read permissions on DLM reports and supports an optional query parameter `limit` to restrict the number of results returned, which defaults to 50 if not specified.",0.0,true,False,0.0768,False,low,False
+How do I load the add monitor form template for Databricks workspace,True,"To load the add monitor form template for a Databricks workspace, you can send a GET request to the following endpoint:
+
+```
+GET /app/client/templates/monitors-form/add-dbricks_ws.json
+```
+
+This will return the JSON form template used specifically for adding a Databricks workspace monitor. Note that the response includes a custom field named `workspace_region` by default, which helps specify the geographic location of your Databricks workspace.",0.5,true,True,0.3692,True,medium,True
+Monitor import progress—where do I see it,True,"You can check the progress of an ongoing monitor import job by making a GET request to the endpoint:
+
+```
+GET /app/api/monitors/import/status
+```
+
+This endpoint returns the current status of the bulk import operation, including details like the number of monitors processed, any errors encountered, and the overall completion percentage. The response also includes a timestamp for the last update to help track progress in real-time.",0.5,true,True,0.3449,True,medium,True
+Where is the to retrieve global monitor status during app startup,True,"To retrieve the global monitor status during app startup, you should use the endpoint:
+
+GET https://www.site24x7.com/app/api/short/current_status
+
+This endpoint returns a lightweight list of every monitor on the account, including their id, name, monitor_type, tags, and current status code. It is specifically designed for a global monitor-status widget used at app bootstrap and provides a summarized current status snapshot across all monitors. Note that this endpoint also supports an optional query parameter `include_detailed` (default: false) to fetch extended status details if needed.",0.333,partial,True,0.7807,True,medium,True
+show me app log profiles pls,True,"To retrieve the configured application log profiles, you can use the following API endpoint:
+
+GET /app/api/applog/log_profiles
+
+This will return a list of all the application log profiles currently configured in your Site24x7 account. The response includes details such as profile names, associated log sources, and filtering criteria. 
+
+Make sure to include your API authentication token in the request headers for successful authorization. Note that this endpoint supports an optional query parameter `profile_status` to filter profiles by their active or inactive state, with the default being active profiles only.",0.75,true,True,0.5531,True,high,True
+Can I erase maintenance schedule data via Operations module,True,"Yes, you can erase maintenance schedule data via the Operations module using the DELETE method on the Scheduled Maintenance endpoint. Specifically, you would send a DELETE request to /app/api/maintenance/{maintenance_id}, where {maintenance_id} is the unique identifier of the maintenance schedule you want to delete. For example, to delete a schedule with ID 15698000489363071, you would send a DELETE request to /app/api/maintenance/15698000489363071. This operation permanently removes the scheduled maintenance data from the system and returns a 202 Accepted status code upon successful deletion.",0.0,true,False,0.2376,False,low,False
+How can I view the VPC availability zones with the highest received network volume?,True,"To view the VPC availability zones with the highest received network volume, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/VPC_AZ/max_rx_volume
+
+This request generates a report showing the VPC availability zones ranked by their highest received network volume. The response will include details on each zone and the corresponding data volume metrics. Note that this endpoint requires an API key to be passed in the header for authentication, and it supports an optional query parameter ""region"" to filter results by a specific geographic region.",0.667,true,True,0.1268,True,medium,True
+How can I retrieve all alert notification categories in Site24x7,True,"To retrieve all alert notification categories in Site24x7, you can make a GET request to the following endpoint:
+
+```
+GET /app/api/alarms_category
+```
+
+This API call will return a list of all configured alert notification categories in your account. Note that the response includes detailed metadata about each category, such as its unique ID, name, and description, which can be used to manage or filter alerts programmatically. The request requires an authentication token passed in the headers, and it supports an optional query parameter `include_inactive` (default: false) to include categories that are currently disabled.",0.333,true,True,0.3204,True,medium,True
+fetch third_party_services inventory,True,"To fetch the inventory of third-party service integrations, you can use the following GET request:
+
+```
+GET https://www.site24x7.com/app/api/short/third_party_services
+```
+
+This endpoint returns a lightweight list of all configured third-party integrations, such as PagerDuty-style services. The response can be used to populate notification actions within a Notification Profile. Note that this endpoint supports pagination with a default page size of 50 integrations per request.",0.667,partial,True,0.2076,True,medium,True
+fetch top memory consumption report for Tencent Cloud SCF services,True,"To fetch the top memory consumption report for Tencent Cloud SCF services, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/TENCENTCLOUD_SCF/Mem
+
+This endpoint retrieves the top memory usage statistics for Tencent Cloud SCF functions, helping you identify the functions with the highest memory consumption. Note that the response includes detailed metrics such as average memory used, peak memory usage, and the number of invocations for each function.",0.5,true,True,0.0418,True,medium,True
+How can I view the availability summary report for my Hadoop clusters?,True,"To view the availability summary report for your Hadoop clusters, you can use the following API endpoint:
+
+GET /app/api/reports/availability_summary/type/HADOOP
+
+This endpoint fetches the availability summary reports specifically for Hadoop clusters, allowing you to evaluate uptime and service reliability. You can optionally include query parameters such as startDate and endDate in the request to specify the reporting period, with the default date range set to the last 30 days. The response will provide detailed metrics on cluster availability and any downtime incidents.",0.333,partial,True,0.0587,True,medium,True
+How can I view Windows Services details for a specific EC2 instance?,True,"To view Windows Services details for a specific EC2 instance, you can use the following API endpoint:
+
+GET /app/api/reports/child-details/EC2INSTANCE/WindowsServices/{id}
+
+Replace {id} with the unique identifier of the EC2 instance you want to query. This endpoint will return detailed information about the Windows services running on that particular EC2 instance, including service status, startup type, and last run time. Note that the response also includes a ""serviceOwner"" field, which indicates the user account under which each service is running.",0.333,true,True,0.1098,True,medium,True
+How can I see which S3 buckets have the highest first byte latency?,True,"To see which S3 buckets have the highest first byte latency, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/S3BUCKET/first_byte_latency
+
+This will provide a report listing the top S3 buckets ranked by their first byte latency, helping you assess their performance. Note that this endpoint requires an API key to be included in the request header for authentication.",0.5,true,True,0.0507,True,medium,True
+How do I retrieve the agent configuration profile details by ID in Site24x7,True,"To retrieve the agent configuration profile details by ID in Site24x7, you need to make a GET request to the following endpoint:
+
+```
+GET https://www.site24x7.com/app/api/apminsight/agent_config_profile/{id}
+```
+
+Replace `{id}` with the specific ID of the Agent Configuration profile you wish to fetch. This call returns the full configuration details, including:
+
+- `agent_type`
+- `profile_name`
+- the general `agent_config` tuning block
+- the agent-type-specific `agent_specific_info` block (such as log level, scheduled maintenance day/time, header recording rules)
+
+Note that this endpoint supports an optional query parameter `include_metadata` (default: false) that, when set to true, also returns audit trail information for the profile.",0.0,partial,True,0.3347,False,low,False
+How can I see which network devices have the highest packet loss?,True,"To see which network devices have the highest packet loss, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/NETWORKDEVICE/packet_loss
+
+This endpoint generates a report listing network devices ranked by their packet loss rates, allowing you to identify devices with the most significant packet loss issues. The response includes device identifiers, packet loss percentages, and timestamps of the last recorded data. Note that the default report limit is 50 devices, but you can adjust this with the optional ""limit"" query parameter.",0.667,true,True,0.0944,True,medium,True
+How can I check the availability summary for my Azure Service Bus Queue?,True,"To check the availability summary for your Azure Service Bus Queue, you can use the following API endpoint:
+
+GET /app/api/reports/availability_summary/type/AZURE-SBQUEUE
+
+This endpoint fetches availability summary reports specifically for Azure Service Bus Queues, summarizing uptime and service status. The response will provide you with detailed insights into the availability metrics of your queue over the selected time period.
+
+Note that this endpoint supports an optional query parameter ""region"" to filter the availability data by Azure region, which defaults to ""us-east-1"" if not specified.",0.333,partial,True,0.264,True,medium,True
+How can I update the auto-discovery toggle for plugin monitors using Site24x7,True,"To update the auto-discovery toggle for plugin monitors in Site24x7, you should use the PUT method on the /app/api/plugin_configurations endpoint. This endpoint allows you to update the settings related to Auto-Discovery Toggle for plugins. 
+
+You need to send a JSON payload containing the relevant auto-discovery settings you want to update. For example, the payload might include fields like ""auto_discovery_enabled"" (a boolean) and the specific plugin identifiers for which the toggle applies. The API expects the full configuration object, not just partial updates.
+
+Example request:
+
+```
+PUT /app/api/plugin_configurations
+Content-Type: application/json
+
+{
+  ""plugin_name"": ""OperatingSystemObjects"",
+  ""auto_discovery_enabled"": true
+}
+```
+
+A successful update will return HTTP status code 201 Created along with the updated configuration details. This allows you to programmatically enable or disable auto-discovery for specified plugin monitors through the API.",0.143,true,False,0.1054,True,high,True
+How do I check the status of the alarms assistant AI workflow,True,"To check the status of the alarms assistant AI workflow, you should use the following API endpoint:
+
+GET /app/api/genai/workflow/alarms_assistant
+
+This request retrieves the specific AI workflow configuration for the alarms assistant by its ID or name. The response will include the current status and configuration details of the alarms assistant workflow.
+
+Make sure to include the appropriate authentication headers in your request. The endpoint returns a 202 Accepted status code upon success, indicating that the workflow status has been fetched successfully.",0.5,partial,True,0.114,True,high,True
+How can I check the outage report for my Transit Gateway?,True,"To check the outage report for your Transit Gateway, you can use the following API endpoint:
+
+GET /app/api/reports/outages/type/TRANSITGATEWAY
+
+This request will fetch detailed information about any outages or service interruptions specifically affecting your Transit Gateway. Note that this endpoint requires an API key with read permissions and supports optional query parameters like startDate and endDate to filter the report by a specific time range. The response will include outage start and end times, duration, and impact severity.",0.667,true,True,0.066,True,medium,True
+request to partially update Anomaly Settings in Configuration Profiles,True,"To partially update the Anomaly Settings for a given attribute group in your configuration profile, you should use the following API endpoint:
+
+```
+PUT https://www.site24x7.com/app/api/anomaly_settings/{id}
+```
+
+Here, `{id}` is the identifier of the specific anomaly settings profile you want to update. This request allows you to toggle the `enable_alerting` flag to `false` for a particular `attribute_group_id`. Note that the API expects only the changed control to be sent in the payload, rather than the entire settings object, as the UI sends one PUT request per individual control change.
+
+For example, your request body might look like this:
+
+```json
+{
+  ""attribute_group_id"": ""All_Attributes"",
+  ""enable_alerting"": false
+}
+```
+
+This partial update approach ensures minimal data transmission and precise control over anomaly alert settings without affecting other configurations like sensitivity thresholds (L1/L2/L3) or anomaly scoring toggles.
+
+Remember, the endpoint only supports PUT with a JSON payload specifying the exact fields to update; PATCH is not supported for this operation.",0.2,true,False,0.1616,True,medium,True
+get network interface summary report,True,"To get the network interface summary report, you should make a GET request to the following endpoint:
+
+```
+GET /app/api/reports/summary/type/NETWORKINTERFACE
+```
+
+This API call retrieves a summary report for network interfaces, providing an overview of their status and key metrics. The response will include details such as interface status, traffic statistics, and error counts. Note that the request requires an API key passed as a query parameter named `api_key` for authentication.",0.667,true,True,0.0627,True,medium,True
+get cliq org info for setup,True,"To get Zoho Cliq organization details required for setting up the Cliq channel integration, use the following API endpoint:
+
+GET /app/api/zcliq/org_details
+
+This request retrieves all necessary organization information to configure the Cliq integration properly, such as org ID, name, and integration status. Note that the response also includes a field named `default_channel_id` which is used to set the primary notification channel by default.",0.5,true,True,0.0993,True,high,True
+fetch Cambium PON BETA mapped summary report,True,"To fetch the Cambium PON BETA mapped summary report, you can use the following API endpoint with a GET request:
+
+```
+GET /app/api/reports/summary/type/CAMBIUM-PON-BETA
+```
+
+This endpoint retrieves a detailed summary report for Cambium PON BETA devices, including mapped device data and status overview. Note that the BETA version supports additional fields such as device firmware version in the response payload.",0.5,false,True,0.5828,True,high,True
+show me the website assistant config for zia workflows,True,"To retrieve the website assistant configuration for Zia workflows, you should use the following API endpoint:
+
+GET /app/api/genai/workflow/website_assistant
+
+This endpoint allows you to fetch a specific AI workflow configuration by its ID or name. You need to include the workflow identifier as a query parameter named `workflow_id`, which is required to specify the exact configuration you want. For example:
+
+```
+GET /app/api/genai/workflow/website_assistant?workflow_id=12345
+```
+
+The response will contain detailed configuration settings for the website assistant workflow related to Zia integrations. Note that this endpoint also supports an optional parameter `include_metadata` (default is false) which, when set to true, provides additional metadata about the workflow.
+
+If you want to check the overall AI/Zia integration status before fetching the workflow configuration, you can call:
+
+GET /app/api/integration/zia_info
+
+This returns information about currently active AI integrations and their statuses.",0.4,partial,True,0.3978,True,medium,True
+How can I view the wireless LAN controller trend reports?,True,"To view the wireless LAN controller (WLC) trend reports, you can use the following API endpoint:
+
+GET /app/api/reports/trend/type/WLC
+
+This request retrieves trend reports for wireless LAN controllers, allowing you to analyze their performance over time. The response typically includes metrics such as throughput, connection counts, and error rates, helping you monitor the device behavior across different periods. Note that this endpoint supports optional query parameters like startDate and endDate in ISO 8601 format to specify the time range for the trend data, with a default range of the last 30 days.",0.667,partial,True,0.0322,True,medium,True
+How can I view the trend report for my Meraki Cellular Gateway?,True,"To view the trend report for your Meraki Cellular Gateway, you can use the following API endpoint:
+
+GET /app/api/reports/trend/type/MERAKIGATEWAY
+
+This request fetches trend reports specifically for Meraki Cellular Gateway devices, allowing you to analyze performance or usage patterns over a specified period. You may include optional query parameters such as ""startDate"" and ""endDate"" in the request to customize the time range of the report. The response will provide detailed insights into the device's performance trends and usage statistics.",0.667,true,True,0.0425,True,medium,True
+get Kubernetes pod availability summary report,True,"To get the Kubernetes pod availability summary report, you need to make a GET request to the following endpoint:
+
+```
+GET /app/api/reports/availability_summary/type/KUBERNETES_POD
+```
+
+This API call retrieves an availability summary report for Kubernetes pods, showing their uptime and availability statistics. The response includes detailed metrics on pod uptime, downtime incidents, and overall availability percentage. Note that this endpoint requires an API key with monitoring read permissions, and supports an optional query parameter `duration` to specify the report time range, defaulting to the last 7 days.",0.333,true,True,0.1784,True,medium,True
+get Azure Service Bus outage history for Event Hubs,True,"To get the Azure Service Bus outage history specifically for Event Hubs Namespace, you should use the following API endpoint:
+
+GET /app/api/reports/outages/type/AZURE-SERVICEBUS
+
+This endpoint retrieves detailed outage reports related to the Azure Event Hubs Namespace, including downtime incidents and durations. Note that the response also includes a ""severityLevel"" field that categorizes the impact of each outage on a scale from 1 to 5, with 5 being the most severe.",0.5,true,True,0.1093,True,medium,True
+list top_n Juniper Mist switch total_routes report,True,"To list the top_n Juniper Mist switch total_routes report, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/JUNIPER-MIST-SWITCH/total_routes
+
+This endpoint returns a ranked list of Juniper Mist switches based on their total routes, helping you identify key network devices. Optionally, you can include a query parameter `limit` to specify the number of top entries to retrieve, with a default of 10. For example, to get the top 5 switches, use:
+
+GET /app/api/reports/top_n/JUNIPER-MIST-SWITCH/total_routes?limit=5
+
+The response will provide details such as switch ID, name, and the total number of routes associated with each device.",0.333,true,True,0.0437,True,high,True
+How can I see the availability summary for custom protocol ports?,True,"To see the availability summary for custom protocol ports, you can use the following API endpoint:
+
+GET /app/api/reports/availability_summary/type/PORT
+
+This endpoint provides an availability summary report specifically for custom protocol ports, allowing you to review their uptime and availability metrics. Note that this request requires an API key with read permissions for reports and returns data in JSON format by default.",0.5,true,True,0.7457,True,low,False
+fetch website outages report by monitor ID,True,"To fetch the website outages report by monitor ID, you should use the following API endpoint:
+
+GET /app/api/reports/outages/{id}
+
+Replace `{id}` with the specific monitor ID of the website you want to retrieve the detailed outage report for. This endpoint provides the downtime history and incidents related to that particular website monitor. Note that the response includes a ""summaryStatus"" field by default, which highlights the overall health trend of the website over the reported period.",0.333,true,True,0.2577,True,medium,True
+How can I view the summary report for my Azure Redis Cache?,True,"To view the summary report for your Azure Redis Cache, you can use the following API endpoint:
+
+GET /app/api/reports/summary/type/AZURE-REDIS
+
+This request fetches the overall performance metrics and status overview of your Azure Redis Cache. Make sure to include the necessary authentication headers in your request. Note that the response will also include a ""cacheHitRate"" parameter by default, which gives insights into the efficiency of your cache usage.",0.667,true,True,0.0403,True,medium,True
+How can I see which VPC network interfaces have missing data in my reports?,True,"To see which VPC network interfaces have missing data in your reports, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/VPC_NI/nodata_records
+
+This endpoint retrieves a report listing VPC network interfaces that have missing data in their monitoring records. By default, it returns the top 10 interfaces with the most missing data, but you can adjust the count using an optional query parameter `limit` (e.g., `?limit=20`) to get a larger list.",0.0,true,False,0.0796,False,low,False
+fetch configured oauth2_providers using method,True,"To fetch configured OAuth2 providers, you should use the GET method on the endpoint:
+
+```
+GET /app/api/oauth2_providers
+```
+
+This request returns the full list of configured OAuth2 Provider profiles, including details such as client_id, client_secret, access_token, OAuth flow type, requested scopes, token refresh interval, and how the token should be attached to outgoing requests (header name/value). 
+
+Note that the endpoint supports query parameters like `include_disabled` (boolean, default false) to optionally include disabled providers in the response.",0.5,true,True,0.6482,True,medium,True
+How can I check the availability summary for UDP ports?,True,"To check the availability summary for UDP ports, you can use the following API endpoint:
+
+GET /app/api/reports/availability_summary/type/UDP
+
+This endpoint fetches the availability summary report specifically for monitored UDP ports, providing detailed insights into their uptime and availability metrics. Note that the response includes an additional field called ""latency_variance,"" which helps assess the stability of the UDP port's availability over time.",0.0,partial,True,0.1373,False,low,False
+request to modify business_hours_id and display_name,True,"To modify an existing Business Hours profile, including its display_name and time schedule, you should use the following API endpoint:
+
+**PUT https://www.site24x7.com/app/api/business_hours/{id}**
+
+- Replace `{id}` with the specific business_hours_id of the profile you want to update.
+- In the request body, include the updated `display_name` and the `time_config` schedule that specifies start and end times for each day of the week.
+
+For example, your JSON payload might look like this:
+
+```json
+{
+  ""display_name"": ""New Business Hours Name"",
+  ""time_config"": {
+    ""monday"": {""start"": ""09:00"", ""end"": ""17:00""},
+    ""tuesday"": {""start"": ""09:00"", ""end"": ""17:00""},
+    ""wednesday"": {""start"": ""09:00"", ""end"": ""17:00""},
+    ""thursday"": {""start"": ""09:00"", ""end"": ""17:00""},
+    ""friday"": {""start"": ""09:00"", ""end"": ""17:00""},
+    ""saturday"": {""start"": ""10:00"", ""end"": ""14:00""},
+    ""sunday"": {""start"": ""00:00"", ""end"": ""00:00""}
+  }
+}
+```
+
+Note that the `business_hours_id` is provided as the URL path parameter and should not be part of the",0.0,true,False,0.0793,False,low,False
+How can I view disk details for a specific server monitor?,True,"To view disk details for a specific server monitor, you can use the following API endpoint:
+
+GET /app/api/reports/child-details/SERVER/DiskDetails/{id}
+
+Replace `{id}` with the actual server monitor ID. This will fetch disk usage details for that specific server monitor, providing information about storage utilization and status. 
+
+Alternatively, if you need more in-depth disk usage and status data, you can use:
+
+GET /app/api/reports/child-details/COMPUTE/DiskDetails/{id}
+
+This endpoint returns detailed disk information for the server monitor specified by the ID.
+
+Note that both endpoints require the server ID to be passed in the URL path, and the response includes metrics like disk space used, free space, and disk health status. The request must be made using the POST method with a valid API key in the header.",0.2,partial,True,0.5865,True,medium,True
+cliq chatlet status,True,"To check the status of the Zoho Cliq chatlet integration, you can use the following API endpoint:
+
+GET https://www.site24x7.com/app/api/cliq_chatlet
+
+This request returns whether the Zoho Cliq chat widget is enabled for your account. The response will include a JSON object with a boolean field ""enabled"" indicating the status. For example, a response of `{""enabled"": false}` means the chatlet is currently disabled. Note that this endpoint requires an API key passed as a query parameter named ""api_token"" for authentication.",0.5,true,True,0.1507,True,medium,True
+fetch general report for monitor by ID,True,"To fetch a general report for a specific monitor by its ID, use the following endpoint:
+
+GET /app/api/monitors/{id}
+
+Replace {id} with the actual monitor ID. This will retrieve a general report containing key information about the monitor's status and configuration. Note that the request requires an API key passed as a query parameter named ""api_key"" for authentication.",0.333,true,True,0.1297,True,medium,True
+fetch top n transit gateway tg_bytes_in report,True,"To fetch the top Transit Gateways ranked by incoming bytes, use the following GET request:
+
+```
+GET /app/api/reports/top_n/TRANSITGATEWAY/tg_bytes_in
+```
+
+This endpoint returns a report listing the Transit Gateways with the highest incoming byte counts, allowing you to analyze which gateways are receiving the most data. You can optionally specify a query parameter `limit` (default is 10) to control the number of results returned. For example, to get the top 5 transit gateways by incoming bytes:
+
+```
+GET /app/api/reports/top_n/TRANSITGATEWAY/tg_bytes_in?limit=5
+```
+
+The response includes the gateway IDs, names, and their corresponding incoming byte statistics for detailed monitoring.",0.333,true,True,0.2214,True,high,True
+How can I see which processes are using the most memory on my EC2 instances?,True,"To see which processes are using the most memory on your EC2 instances, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/EC2INSTANCE/process_memory
+
+This generates a report showing EC2 instance processes ranked by memory usage, allowing you to identify the processes consuming the most memory. The response includes details like process ID, memory usage percentage, and the EC2 instance name, helping you pinpoint memory-intensive processes effectively.",0.0,true,False,0.1131,False,low,False
+fetch Azure Redis Cache trend report,True,"To fetch the Azure Redis Cache trend report, you can use the following API endpoint with a GET request:
+
+```
+GET /app/api/reports/trend/type/AZURE-REDIS
+```
+
+This will retrieve trend reports showing performance metrics over time for Azure Redis Cache. The response typically includes data such as latency, throughput, and cache hit rates. Note that this endpoint supports an optional query parameter `timeRange` to specify the period for the trend report, defaulting to the last 30 days if not provided.",0.333,partial,True,0.0348,True,medium,True
+How can I view the top disk write traffic for Tencent Cloud CBS?,True,"To view the top disk write traffic for Tencent Cloud CBS, you can use the following API endpoint:
+
+GET /app/api/reports/top_n/TENCENTCLOUD_CBS/DiskWriteTraffic
+
+This endpoint retrieves the top N disk write traffic report for Tencent Cloud CBS instances, allowing you to monitor which disks have the highest write traffic. By default, the API returns the top 10 entries unless you specify a different limit parameter.",0.5,true,True,0.4158,True,medium,True
+Fetch summarized monitor listing for integration setup,True,"To fetch a summarized list of all monitors for integration setup, you should use the following API endpoint:
+
+GET /app/api/short/all/monitors
+
+This endpoint returns a concise summary of all configured monitors, which is ideal for configuring which monitors trigger alerts in third-party integrations. Note that the response includes a ""summaryStatus"" field that indicates the overall health of each monitor, which helps in quickly assessing integration triggers.",0.0,partial,True,0.259,False,low,False

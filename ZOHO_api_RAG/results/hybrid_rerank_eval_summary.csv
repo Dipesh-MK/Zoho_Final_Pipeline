@@ -1,0 +1,3 @@
+method,recall_1_mean,recall_1_std,recall_10_mean,recall_10_std
+dense_only,0.79,0.033,0.9362,0.0389
+hybrid_rrf,0.7912,0.0398,0.94,0.0351

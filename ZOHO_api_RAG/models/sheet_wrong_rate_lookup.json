@@ -1,0 +1,21 @@
+{
+  "sheet_wrong_rate": {
+    "Automations": 0.35947712418300654,
+    "Configuration Profiles": 0.23429951690821257,
+    "Downloads": 0.4642857142857143,
+    "Inventory": 0.32989690721649484,
+    "Milestones": 0.34146341463414637,
+    "My Account": 0.6351351351351351,
+    "Operations": 0.5580808080808081,
+    "Plugin Monitor": 0.6811594202898551,
+    "Report Settings": 0.4934210526315789,
+    "Reports": 0.08116202455825097,
+    "Server Monitor": 0.4140127388535032,
+    "Share": 0.4918032786885246,
+    "Tags": 0.5757575757575758,
+    "Third-Party Integrations": 0.22535211267605634,
+    "User & Alert Management": 0.46218487394957986,
+    "Zia Settings": 0.3787878787878788
+  },
+  "global_fallback": 0.21439859525899913
+}

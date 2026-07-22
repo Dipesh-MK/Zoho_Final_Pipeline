@@ -75,3 +75,16 @@ ckpts/
 # IDE
 .vscode/
 .idea/
+
+*.ipynb
+notebook_hhem.txt
+notebook_hhem_pred.txt
+figures/
+.venv/
+.agents/
+.deepeval/
+.ipynb_checkpoints/
+__pycache__/
+ckpts/
+ollama_serve.log
+executed_notebook.json

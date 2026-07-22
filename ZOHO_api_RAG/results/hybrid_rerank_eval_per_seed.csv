@@ -1,0 +1,17 @@
+seed,recall@1,recall@10,n_eval,method
+1,0.82,0.97,100,dense_only
+2,0.8,0.91,100,dense_only
+3,0.75,0.9,100,dense_only
+4,0.85,0.98,100,dense_only
+5,0.78,0.88,100,dense_only
+6,0.79,0.98,100,dense_only
+7,0.76,0.95,100,dense_only
+8,0.77,0.92,100,dense_only
+1,0.81,0.97,100,hybrid_rrf
+2,0.8,0.91,100,hybrid_rrf
+3,0.75,0.91,100,hybrid_rrf
+4,0.87,0.98,100,hybrid_rrf
+5,0.76,0.89,100,hybrid_rrf
+6,0.81,0.98,100,hybrid_rrf
+7,0.76,0.95,100,hybrid_rrf
+8,0.77,0.93,100,hybrid_rrf
