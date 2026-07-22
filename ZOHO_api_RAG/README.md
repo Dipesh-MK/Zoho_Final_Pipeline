@@ -95,6 +95,55 @@ The pipeline was validated against a test set containing **100 honest (supported
 
 ---
 
+## 📂 Repository File Index
+
+The following table documents all tracked repository files and their classification:
+
+| File Path | Classification | Description |
+| :--- | :--- | :--- |
+| **`pipeline/`** | | |
+| `hallucination_detect.py` | Production Pipeline | Core classification and gated cascade inference pathway. |
+| `hallucination_sim.py` | Production Pipeline | Simulation harness to execute Phase 1 and Phase 2 deep evals. |
+| `feature_engineering_v2.py` | Production Pipeline | Signal calculation script (leakage-free cross validation). |
+| `rag_eval.py` | Base Retrieval | Original text embedding and baseline RAG accuracy checking. |
+| `compare_doc_strategies.py` | Base Retrieval | Strategies evaluation script for text representation format. |
+| `build_sheet_wrong_rate_lookup.py` | Setup Utility | Utility script for computing the initial sheet error matrix. |
+| `split_holdout.py` | Setup Utility | Splits baseline dataset into stratified train/holdout sets. |
+| `synthesize_reports_descriptions.py` | Setup Utility | Pre-generates reports segment description overrides. |
+| `threshold_sweep.py` | Tuning Utility | Grid sweeps threshold boundaries over predicted scores. |
+| `build_hallucination_testset.py` | Testing Suite | Assembles balanced test sets (100 safe / 100 hallucination). |
+| `cascade_gap_analysis.py` | Tuning Utility | Analysis script evaluating cascade boundaries. |
+| **`research/`** | | |
+| `cross_encoder_rerank_eval.py` | Experimental | Evaluates cross-encoder reranking strategies. |
+| `hybrid_rerank_eval.py` | Experimental | Evaluates BM25 + embedding hybrid lookup scores. |
+| `hyde_eval.py` | Experimental | Evaluates HyDE (Hypothetical Document Embeddings). |
+| `boilerplate_diagnostic.py` | Experimental | Diagnoses boilerplate text noise issues in corpus documents. |
+| `boilerplate_rewrite_eval.py` | Experimental | Evaluates rewritten boilerplate context formats. |
+| `synthesize_boilerplate_descriptions.py` | Experimental | Pre-generates synthetic descriptions to mask boilerplate noise. |
+| `eval_boilerplate_fix.py` | Experimental | Verifies accuracy gains from synthetic descriptions. |
+| `diagnose_retrieval.py` | Experimental | Diagnoses specific retrieval path failures. |
+| `dataset_check.py` | Experimental | Scans source records for duplication and format errors. |
+| **`models/`** | | |
+| `hallucination_risk_model_9feat_v2.joblib` | Model Parameter | Current production model (numerical classification weights). |
+| `check_model.py` | Utility | Verification check script ensuring joblib models load cleanly. |
+| `fix_model_save.py` | Utility | Re-pickling utility script. |
+| `sheet_wrong_rate_lookup.json` | Lookup Matrix | Production category error rate map used during live features. |
+| `knn_neighbor_index.joblib` | Model Parameter | High-importance NearestNeighbors index fitted under active environment. |
+| **`results/`** | | |
+| `results_seed0.csv` | Aggregate Results | Results metadata for seed 0 test set. |
+| `results_seed1.csv` | Aggregate Results | Results metadata for seed 1 test set. |
+| `results_seed2.csv` | Aggregate Results | Results metadata for seed 2 test set. |
+| `feature_engineering_v2_model_comparison.csv` | Aggregate Results | Classifier score comparisons table. |
+| `cross_encoder_rerank_eval_summary.csv` | Aggregate Results | Reranker performance summaries. |
+| `cross_encoder_rerank_eval_per_seed.csv` | Aggregate Results | Reranker seed summaries. |
+| `hybrid_rerank_eval_summary.csv` | Aggregate Results | Hybrid retrieval metrics. |
+| `hybrid_rerank_eval_per_seed.csv` | Aggregate Results | Hybrid retrieval seed metrics. |
+| `eval_boilerplate_fix_summary.csv` | Aggregate Results | Boilerplate evaluation summaries. |
+| `eval_boilerplate_fix_per_seed.csv` | Aggregate Results | Boilerplate evaluation seed metrics. |
+| `threshold_sweep_results.csv` | Aggregate Results | Sweep precision/recall summaries. |
+
+---
+
 ## 🛠️ Installation & Setup
 
 1. **Clone the repository**:
@@ -116,7 +165,6 @@ The pipeline was validated against a test set containing **100 honest (supported
 
 ## 🚀 How to Run the Pipeline
 
-### 1. Run the Simulation Pipeline
 To evaluate Phase 1 classifier predictions and Phase 2 deep LLM validation over the full dataset:
 ```bash
 python pipeline/hallucination_sim.py \
