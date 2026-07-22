@@ -86,11 +86,11 @@ The pipeline was validated against a test set containing **100 honest (supported
   100 honest / 100 hallucinated responses
 
                         Precision     Recall         F1    TP    FN    FP    TN
-  DIRECT (2+3)              0.934      0.850      0.890    85    15     6    94
-  CASCADE (prod)            0.967      0.870      0.916    87    13     3    97
+  DIRECT (2+3)              0.942      0.810      0.871    81    19     5    95
+  CASCADE (prod)            0.968      0.900      0.933    90    10     3    97
 
-  Recall gap (direct - cascade) : -0.020
-  Cascade judge fire rate on this set : 105/200 (52.5%)
+  Recall gap (direct - cascade) : -0.090
+  Cascade judge fire rate on this set : 104/200 (52.0%)
 ```
 
 ---
