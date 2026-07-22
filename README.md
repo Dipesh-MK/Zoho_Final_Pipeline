@@ -24,17 +24,8 @@ graph TD
 ```
 
 ### Signal 1: Retrieval Risk Score (100% Offline, Zero LLM Calls)
-- Every query is evaluated using **9 engineered features**:
-  - `top1_sim`: Cosine similarity of the best-retrieved chunk.
-  - `margin`: Similarity gap between top-1 and top-2 candidates (identifies retrieval ambiguity).
-  - `avg_pairwise_topk_sim`: Cluster tightness among the top-k chunks.
-  - `query_token_count`: Distinguishes short keyword fragments from long questions.
-  - `n_candidates_within_margin`: Count of near-tie chunks.
-  - `sheet_wrong_rate`: Historical failure rate of the retrieved API's category sheet.
-  - `query_endpoint_token_overlap`: Token Jaccard-style overlap of query keywords vs. endpoint path structure.
-  - `topk_similarity_entropy`: Softmax-normalized Shannon entropy of top-10 retrieval distribution (measures tail diffusion).
-  - `knn_neighbor_wrong_rate`: Historical failure rate of the query's nearest embedding neighbors.
-- The 9-feature classifier (best of LogisticRegression / RandomForest / GradientBoosting by ROC-AUC — verify which was selected via `check_model.py`) predicts `lr_prob`, the probability that **retrieval itself** was wrong. It has no visibility into what the LLM actually generated.
+- Every query is evaluated using **9 engineered features** (see [Model Details](#-model-details--feature-engineering) below for the full table and how the classifier itself was selected).
+- The classifier predicts `lr_prob`, the probability that **retrieval itself** was wrong. It has no visibility into what the LLM actually generated — that's Signal 2's job.
 
 ### Signal 2: Embedding-Based Groundedness (100% Offline, Zero LLM Calls)
 - Catches the failure mode Signal 1 is structurally blind to: retrieval found the right document, but the LLM's response still contains a fabricated detail not present in that document.
@@ -54,7 +45,70 @@ graph TD
 
 ---
 
-## 📈 Multi-Seed Performance Evaluation Results
+## 🧬 Model Details & Feature Engineering
+
+### The 9 Features
+
+The classifier behind Signal 1 is trained on 9 features — the original 5 plus 4 added later to close blind spots the first 5 couldn't see. Stats below are computed directly from `feature_engineering_v2_dataset.csv` (5,695 queries, 21.4% with wrong top1 retrieval).
+
+| # | Feature | What it measures | Mean | Min | Max |
+|---|---|---|---|---|---|
+| 1 | `top1_sim` | Cosine similarity of the best-retrieved chunk to the query. | 0.634 | 0.166 | 0.836 |
+| 2 | `margin` | `top1_sim - top2_sim` — narrow margin means the retriever is genuinely torn between two candidates. | 0.061 | 0.000 | 0.388 |
+| 3 | `avg_pairwise_topk_sim` | Mean pairwise similarity *among* the top-k chunks themselves (cluster tightness, not query relevance). | 0.739 | 0.309 | 0.998 |
+| 4 | `query_token_count` | Token count of the query — short fragments are structurally more ambiguous. | 8.83 | 1 | 21 |
+| 5 | `n_candidates_within_margin` | Count of top-k candidates within 0.02 similarity of top1 (near-ties with the winner). | 0.43 | 0 | 4 |
+| 6 | `sheet_wrong_rate` | Historical wrong-rate of the retrieved API's category sheet. **Leakage-free**: built via out-of-fold CV so a query's own outcome never feeds its own feature value. | 0.215 | 0.056 | 0.571 |
+| 7 | `query_endpoint_token_overlap` | Token overlap ratio between the query and the endpoint *path* specifically (not the doc description). | 0.257 | 0.000 | 1.000 |
+| 8 | `topk_similarity_entropy` | Normalized Shannon entropy of the top-10 similarity distribution — diffuse vs. one clear winner. **Caveat:** near-constant in this dataset (mean 0.9994, std 0.0006) and lowest-but-one in feature importance below — it's likely contributing little signal here. | 0.9994 | 0.9955 | 1.000 |
+| 9 | `knn_neighbor_wrong_rate` | Fraction of the query's k=15 nearest-neighbor queries that historically had wrong retrieval. **Leakage-free**: same out-of-fold design as feature 6 — a query is never its own neighbor. | 0.248 | 0.000 | 1.000 |
+
+### Model Selection
+
+Three candidate classifiers are trained on the same 9-feature matrix and compared by 5-fold stratified cross-validation (out-of-fold predictions, so the comparison is apples-to-apples and not inflated by in-sample fit):
+
+```mermaid
+graph TD
+    X[9-Feature Matrix] --> CV[5-Fold Stratified CV — Out-of-Fold Predictions]
+    CV --> LR["LogisticRegression<br/>class_weight=balanced"]
+    CV --> RF["RandomForestClassifier<br/>n_estimators=300, max_depth=6"]
+    CV --> GB["GradientBoostingClassifier<br/>n_estimators=200, max_depth=3, lr=0.05"]
+    LR --> CMP{Compare ROC-AUC / PR-AUC}
+    RF --> CMP
+    GB --> CMP
+    CMP --> BEST[Best-Scoring Model Selected]
+    BEST --> SAVE[Saved via --save-model to .joblib]
+```
+
+Reproduced directly against `feature_engineering_v2_dataset.csv` using the same CV split (seed 42) and model configs as `feature_engineering_v2.py`:
+
+| Model | ROC-AUC (9-feat) | PR-AUC (9-feat) | Δ vs. 5-feat baseline |
+|---|---|---|---|
+| **RandomForest** | **0.9231** | **0.7743** | +0.0293 |
+| GradientBoosting | 0.9218 | 0.7748 | +0.0252 |
+| LogisticRegression | 0.9156 | 0.7507 | +0.0309 |
+
+All three clear the old 5-feature ceiling (~0.88–0.90) by a meaningful margin, and the three scores are close enough (0.9156–0.9231) that the choice isn't dominated by one model — RandomForest edges out on ROC-AUC, LogisticRegression has the largest *delta* from its own 5-feature baseline.
+
+**Feature importance for the top-scoring model (RandomForest, full-data fit):**
+
+| Feature | Importance |
+|---|---|
+| `knn_neighbor_wrong_rate` | 0.2753 |
+| `margin` | 0.2713 |
+| `sheet_wrong_rate` | 0.1401 |
+| `n_candidates_within_margin` | 0.1178 |
+| `top1_sim` | 0.0894 |
+| `avg_pairwise_topk_sim` | 0.0422 |
+| `topk_similarity_entropy` | 0.0336 |
+| `query_endpoint_token_overlap` | 0.0219 |
+| `query_token_count` | 0.0085 |
+
+Two of the three new leakage-free features (`knn_neighbor_wrong_rate`, `sheet_wrong_rate`) rank in the top 3 — they're doing real work, not just adding noise. `topk_similarity_entropy` ranks near the bottom, consistent with the near-zero variance flagged in the feature table above.
+
+**⚠️ Open discrepancy, worth resolving before this is final:** the analysis above shows RandomForest scoring best, which uses `.feature_importances_`. But `check_model.py` — the utility script for inspecting the deployed model — calls `model.coef_`, an attribute that **only exists on a linear model** like LogisticRegression; it will throw an `AttributeError` on a RandomForest or GradientBoosting model. That means either (a) the actually-deployed `hallucination_risk_model_9feat_v2.joblib` is a LogisticRegression, trained on a different data snapshot or `--save-model` run than the one reproduced here, or (b) `check_model.py` is out of date and needs a `hasattr` check for both attribute types. Run `check_model.py` against your real deployed `.joblib` to see which — worth confirming before you present the model comparison numbers above as *the* production model's story.
+
+---
 
 The pipeline was validated against a test set containing **100 honest (supported)** and **100 hallucinated (unsupported)** responses across 3 random seeds. The cascade pipeline consistently outperforms direct LLM verification while reducing LLM calls by roughly **50%**.
 
