@@ -1,4 +1,4 @@
-﻿# Site24x7 RAG Hallucination Detection & Risk Cascade Pipeline
+# Site24x7 RAG Hallucination Detection & Risk Cascade Pipeline
 
 This repository implements a production-grade, cost-effective **Hallucination Detection & Gated Cascade Pipeline** for a Retrieval-Augmented Generation (RAG) system mapping natural language queries to Site24x7 API endpoints.
 
@@ -6,21 +6,24 @@ This repository implements a production-grade, cost-effective **Hallucination De
 
 ## ⚙️ How It Works: The Gated Cascade Architecture
 
-Instead of routing every query through an expensive LLM judge, the pipeline cascades evaluations in two tiers:
+Instead of routing every query through an expensive LLM judge, the pipeline cascades evaluations in three tiers. Two signals are always computed with zero LLM calls; the third (the judge) only fires when either of the first two flags uncertainty:
 
 ```mermaid
 graph TD
-    A[User Query] --> B[RAG Retrieval & Phase 1 Feature Extraction]
-    B --> C[Compute Risk Score via Classifier Model]
-    C --> D{Risk Score Thresholds}
-    D -- "Score < Low Threshold (Auto-Low)" --> E[Label: Low Risk / Skip LLM Judge]
-    D -- "Score > High Threshold (Auto-High)" --> F[Label: High Risk / Skip LLM Judge]
-    D -- "Low <= Score <= High" --> G[Gated Phase 2: Fire LLM Judge]
-    G --> H[LLM Sentence Verification & Context Check]
-    H --> I[Final Refined Risk Label]
+    A[User Query] --> B[RAG Retrieval]
+    B --> C[Signal 1: 9-Feature Retrieval Risk Score - lr_prob]
+    B --> R[LLM Generates Response]
+    R --> S[Signal 2: Embedding Groundedness Check - frac_unsupported_embedding]
+    C --> D{Cascade Gate}
+    S --> D
+    D -- "lr_prob < Low Threshold AND groundedness OK" --> E[Label: Low Risk / Judge Skipped]
+    D -- "lr_prob > High Threshold" --> F[Label: High Risk / Judge Skipped]
+    D -- "Uncertain band, OR groundedness_bad force-fires the judge even when lr_prob is low" --> G[Signal 3: Gated LLM Judge Fires]
+    G --> H[Sentence-Level Verification & Context-Relevance Check]
+    H --> I[Final Risk Label - judge verdict always wins when it fired]
 ```
 
-### 1. Phase 1: Fast Classifier Scoring (100% Offline, Zero LLM Calls)
+### Signal 1: Retrieval Risk Score (100% Offline, Zero LLM Calls)
 - Every query is evaluated using **9 engineered features**:
   - `top1_sim`: Cosine similarity of the best-retrieved chunk.
   - `margin`: Similarity gap between top-1 and top-2 candidates (identifies retrieval ambiguity).
@@ -31,16 +34,23 @@ graph TD
   - `query_endpoint_token_overlap`: Token Jaccard-style overlap of query keywords vs. endpoint path structure.
   - `topk_similarity_entropy`: Softmax-normalized Shannon entropy of top-10 retrieval distribution (measures tail diffusion).
   - `knn_neighbor_wrong_rate`: Historical failure rate of the query's nearest embedding neighbors.
-- The 9-feature **GradientBoostingClassifier** predicts a risk probability.
-- **Cascade Gate**:
-  - If probability $< 0.45$ $\rightarrow$ Automatically flagged **LOW RISK** (LLM judge skipped).
-  - If probability $> 0.90$ $\rightarrow$ Automatically flagged **HIGH RISK** (LLM judge skipped).
-  - Otherwise (Uncertain Band) $\rightarrow$ Sent to **Phase 2**.
+- The 9-feature classifier (best of LogisticRegression / RandomForest / GradientBoosting by ROC-AUC — verify which was selected via `check_model.py`) predicts `lr_prob`, the probability that **retrieval itself** was wrong. It has no visibility into what the LLM actually generated.
 
-### 2. Phase 2: Deep Verification (Gated LLM Judge)
-- Generates a response and triggers the LLM judge.
-- The judge assesses context relevance and performs sentence-level verification.
-- Refines the final risk label (`low`, `medium`, or `high`).
+### Signal 2: Embedding-Based Groundedness (100% Offline, Zero LLM Calls)
+- Catches the failure mode Signal 1 is structurally blind to: retrieval found the right document, but the LLM's response still contains a fabricated detail not present in that document.
+- The generated response is split into sentences (`split_sentences`), each sentence is embedded, and its **max cosine similarity to any retrieved context chunk** is computed (`embedding_groundedness`).
+- A sentence below `--groundedness-threshold` (default `0.5`) is flagged as possibly unsupported; `frac_unsupported_embedding` is the fraction of the response's sentences that fail this bar.
+- If `frac_unsupported_embedding` exceeds `--groundedness-gate-threshold` (default `0.10`), the query is force-routed to the judge **regardless of what Signal 1 said** — this is what lets a low-retrieval-risk-but-hallucinated response still get checked.
+
+### Cascade Gate
+- `lr_prob < low_thresh` **and** groundedness OK $\rightarrow$ **LOW RISK**, judge skipped.
+- `lr_prob > high_thresh` $\rightarrow$ **HIGH RISK**, judge skipped (a bad retrieval is a bad retrieval regardless of groundedness).
+- Otherwise — genuinely uncertain `lr_prob`, **or** force-fired by the groundedness gate despite a low `lr_prob` — the judge fires. When the judge fires for either reason, its verdict determines the final label; `lr_prob` is never allowed to override a verdict the judge actually returned.
+
+### Signal 3: Deep Verification (Gated LLM Judge)
+- One combined chat call returns `context_relevant` (true/false/partial) plus per-sentence `sentence_verdicts` (supported/unsupported/partial), checked only against the retrieved context.
+- `high` if `context_relevant == "false"` or `judge_frac_unsupported >= 0.5`; `medium` if `partial` or any unsupported sentence; `low` otherwise.
+- Refines the final risk label (`low`, `medium`, or `high`) for every query the cascade gate routed here.
 
 ---
 
@@ -172,8 +182,10 @@ python pipeline/hallucination_sim.py \
     Datasets/ADMIN_API/site24x7_Admin_API.xlsx \
     --extra-descriptions Datasets/reports_synthetic_descriptions.csv \
     --model-path models/hallucination_risk_model_9feat_v2.joblib \
-    --low-risk-threshold 0.45 \
-    --high-risk-threshold 0.90 \
+    --low-risk-threshold 0.40 \
+    --high-risk-threshold 0.82 \
+    --groundedness-threshold 0.5 \
+    --groundedness-gate-threshold 0.10 \
     --base-url YOUR_BASE_URL \
     --api-key YOUR_API_KEY \
     --n-deep 200 \
